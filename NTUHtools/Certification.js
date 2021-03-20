@@ -59,7 +59,7 @@ function OpenHistories()
 	console.log('OpenHistories() was returned.');
 }
 
-function WriteCertification(t) 
+function WriteCertification() 
 {
 	console.log('WriteCertification() was called.');
 	OpenHistories();
