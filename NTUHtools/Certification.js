@@ -21,7 +21,7 @@ function NotERtoWard()
 {
 	var accountIDSE = location.search.match(/AccountIDSE=([a-zA-Z0-9]{11})/i);
 	if (accountIDSE) accountIDSE = accountIDSE[1];
-	else accountidse = document.documentElement.innerHTML.match(/AccountIDSE=([a-zA-Z0-9]{11})/i);
+	else accountidse = document.documentElement.innerHTML.match(/AccountIDSE=([a-zA-Z0-9]{11})/i)[1];
 	
 	var wards = document.getElementById('NTUHWeb1_dgLogPatTransferBed').rows;
 	var adm = '9';
