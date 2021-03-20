@@ -14,8 +14,9 @@ function ERtoWard()
 	t += '至本院急診就診並留觀待床，於';
 	t += GetDatebyString(document.getElementById('NTUHWeb1_gvwStatusHistory_ctl0'+document.getElementById('NTUHWeb1_gvwStatusHistory').rows.length+'_EndDateStr').innerText, false);
 	t += '轉入普通病房接續治療，';
-	console.log('ERtoWard() was returned.');
+	
 	console.log('txt = '+ t);
+	console.log('ERtoWard() was returned.');
 	return t;
 }
 
@@ -36,8 +37,9 @@ function NotERtoWard()
 	var t = '病患因上述疾病，於';
 	t += GetDatebyString(adm, false);
 	t += '至本院一般病房住院，';
-	console.log('NotERtoWard() was returned.');
+	
 	console.log('txt = '+ t);
+	console.log('NotERtoWard() was returned.');
 	return t;
 }
 
@@ -47,8 +49,10 @@ function Discharge()
 	var d = new Date(); 
 	d.setDate(d.getDate() + 1);
 	var t = '於民國'+(d.getFullYear()-1911)+'年'+d.getMonth().toString().padStart(2,'0')+'月'+d.getDate().toString().padStart(2,'0')+'日出院，出院後宜持續門診追蹤。';
-	console.log('Discharge() was returned.');
+	
 	console.log('txt = '+ t);
+	console.log('Discharge() was returned.');
+	return t;
 }
 
 function OpenHistories()
