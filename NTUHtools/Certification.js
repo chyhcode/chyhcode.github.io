@@ -7,21 +7,24 @@ function GetDatebyString(str, HHMM)
 
 function ERtoWard()
 {
+	console.log('ERtoWard() was called.');
 	__doPostBack('NTUHWeb1$gvwEmgHistory$ctl02$lblChartNo','');	
 	var t = '病患因上述疾病，於';
 	t += GetDatebyString(document.getElementById('NTUHWeb1_gvwStatusHistory_ctl02_EndDateStr').innerText, true);
 	t += '至本院急診就診並留觀待床，於';
 	t += GetDatebyString(document.getElementById('NTUHWeb1_gvwStatusHistory_ctl0'+document.getElementById('NTUHWeb1_gvwStatusHistory').rows.length+'_EndDateStr').innerText, false);
 	t += '轉入普通病房接續治療，';
-	alert(t);
+	console.log('ERtoWard() was returned.');
+	console.log('txt = '+ t);
 	return t;
 }
 
 function NotERtoWard()
 {
+	console.log('NotERtoWard() was called.');
 	var accountIDSE = location.search.match(/AccountIDSE=([a-zA-Z0-9]{11})/i);
 	if (accountIDSE) accountIDSE = accountIDSE[1];
-	else accountidse = document.documentElement.innerHTML.match(/AccountIDSE=([a-zA-Z0-9]{11})/i)[1];
+	else accountidse = document.documentElement.innerHTML.match(/AccountIDSE=([a-zA-Z0-9]{11})/i);
 	
 	var wards = document.getElementById('NTUHWeb1_dgLogPatTransferBed').rows;
 	var adm = '9';
@@ -33,21 +36,37 @@ function NotERtoWard()
 	var t = '病患因上述疾病，於';
 	t += GetDatebyString(adm, false);
 	t += '至本院一般病房住院，';
-	alert(t);
+	console.log('NotERtoWard() was returned.');
+	console.log('txt = '+ t);
 	return t;
 }
 
 function Discharge()
 {
+	console.log('Discharge() was called.');
 	var d = new Date(); 
 	d.setDate(d.getDate() + 1);
-	return '於民國'+(d.getFullYear()-1911)+'年'+d.getMonth().toString().padStart(2,'0')+'月'+d.getDate().toString().padStart(2,'0')+'日出院，出院後宜持續門診追蹤。';
+	var t = '於民國'+(d.getFullYear()-1911)+'年'+d.getMonth().toString().padStart(2,'0')+'月'+d.getDate().toString().padStart(2,'0')+'日出院，出院後宜持續門診追蹤。';
+	console.log('Discharge() was returned.');
+	console.log('txt = '+ t);
 }
 
 function OpenHistories()
 {
+	console.log('OpenHistories() was called.');
 	if ( !document.getElementById('NTUHWeb1_divEmgHistoryInfo') ) document.getElementById('NTUHWeb1_btnEmgHistoryShowHide').click();
 	if ( !document.getElementById('NTUHWeb1_divLogPatTransferBedInfo') ) document.getElementById('NTUHWeb1_btnLogPatTransferBedShowHide').click();
+	console.log('OpenHistories() was returned.');
 }
 
-function WriteCertification(t) {document.getElementById('NTUHWeb1_InstructionSetItem').value = t; }
+function WriteCertification(t) 
+{
+	console.log('WriteCertification() was called.');
+	OpenHistories();
+	var txt = "";
+	if ( document.getElementById('NTUHWeb1_gvwEmgHistory_ctl02_lblDischargeStatus').innerText == '住院' ) txt = ERtoWard();
+	else txt = NotERtoWard();
+	txt += Discharge();
+	document.getElementById('NTUHWeb1_InstructionSetItem').value = txt; 
+	console.log('WriteCertification() was returned.');
+}
