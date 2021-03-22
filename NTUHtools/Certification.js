@@ -67,8 +67,8 @@ function WriteCertification()
 {
 	console.log('WriteCertification() was called.');
 	OpenHistories();
-	var txt = "";
-	if ( document.getElementById('NTUHWeb1_gvwEmgHistory_ctl02_lblDischargeStatus').innerText == '住院' ) txt = ERtoWard();
+	var txt = document.getElementById('NTUHWeb1_gvwEmgHistory_ctl02_lblDischargeStatus';
+	if ( txt!=NULL && txt.innerText == '住院' ) txt = ERtoWard();
 	else txt = NotERtoWard();
 	txt += Discharge();
 	document.getElementById('NTUHWeb1_InstructionSetItem').value = txt; 
