@@ -1,0 +1,92 @@
+@charset "utf-8";
+
+* {
+	font-family: Arial, Helvetica, sans-serif, 'Microsoft JhengHei';
+}
+
+html {
+	height: -webkit-fill-available;
+}
+
+body {
+	margin: auto; 
+	max-width: 800px; 
+	min-width: 700px; 
+	width: 100%; 
+	height: 100%;
+	background-color: #dfe8e7;
+}
+
+.wrapperTable {
+    width: 100%;
+	height: 100%;
+	padding: 20px;
+}
+
+.sidenav {
+	height: 100%;
+	width:20%;
+	min-width: 100px; 
+	vertical-align: top;
+}
+
+.sidenav a {
+	padding: 2px;
+	display: block;
+}
+
+.main {
+	height: 100%;	
+	padding: 5px;
+    background-color: #FFFFDD;
+}
+
+.titleDiv {
+	color: #FFFFFF;
+	background-color: #4F618A;
+	border: 1px solid #999999;
+	padding: 2px;
+}
+
+.titleSpan {
+/* 	font-size: 20px;
+	font-weight: bold; */
+	margin-left: 2px;
+}
+
+.radioSpan {
+	float: right;
+} 
+
+.textareaDiv {
+	padding-right: 6px;
+}
+
+textarea {
+	font-size: 14px; 
+	font-family: Consolas; 
+	width: 100%;
+}
+
+.tdRecordElementTitle {
+	border: 1px solid #999999;
+	background-color: #4F618A;
+	color: #FFFFFF;
+	font-weight: bold;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 2px;
+	padding-right: 2px;
+}
+
+#tblProgressNote {
+	margin: auto;
+	max-width: 850px;
+	min-width: 500px;
+	width: 100%;
+	border-width: 1px;
+	border-color: rgb(153, 153, 153);
+	border-collapse: collapse;
+background-color: #FFFFDD;
+font-size: 15px;
+}	
