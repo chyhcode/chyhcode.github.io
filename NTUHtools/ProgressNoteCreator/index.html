@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Progress Note Creator</title>
+		<link rel="stylesheet" href="ProgressNoteCreator.css">
+		<script src="ProgressNoteCreator.js"></script>
+	</head>
+	<body><table class="wrapperTable"><tr>
+		<td class="sidenav">
+			<a></a>
+			<a></a>
+			<a></a>
+			<a></a>
+			<a></a>
+		</td>
+		<td class="main">
+			<h1>步驟一、填寫模板</h1>
+			<div class="titleDiv">
+				<span class="titleSpan">Subjective</span>
+				<span class="radioSpan">
+					<input type="radio" id="txbSubject_Replace" name="txbSubject" checked><label>覆蓋原文</label>
+					<input type="radio" id="txbSubject_Append"  name="txbSubject"><label>附加在原文之後</label>
+				</span>
+			</div>
+			<div class="textareaDiv"><textarea id="txbSubject" rows="10" tabIndex="1"></textarea></div>
+			<div class="titleDiv">
+				<span class="titleSpan">Objective</span>
+				<span class="radioSpan">
+					<input type="radio" id="txbObject_Replace" name="txbObject"><label>覆蓋原文</label>
+					<input type="radio" id="txbObject_Append"  name="txbObject" checked><label>附加在原文之後</label>
+				</span>
+			</div>
+			<div class="textareaDiv"><textarea id="txbObject" rows="10" tabIndex="2"></textarea></div>
+			<div class="titleDiv">
+				<span class="titleSpan">Assessment of Catheterization</span>
+				<span class="radioSpan">
+					<input type="radio" id="txbBSIBundle_Replace" name="txbBSIBundle" checked><label>覆蓋原文</label>
+					<input type="radio" id="txbBSIBundle_Append"  name="txbBSIBundle"><label>附加在原文之後</label>
+				</span>
+			</div>
+			<div class="textareaDiv"><textarea id="txbBSIBundle" rows="6" tabIndex="3"></textarea></div>
+			<div class="titleDiv">
+				<span class="titleSpan">Brief Summary of yesterday</span>
+				<span class="radioSpan">
+					<input type="radio" id="tabBrifSummaryOfYesterday_Replace" name="tabBrifSummaryOfYesterday" checked><label>覆蓋原文</label>
+					<input type="radio" id="tabBrifSummaryOfYesterday_Append"  name="tabBrifSummaryOfYesterday"><label>附加在原文之後</label>
+				</span>
+			</div>
+			<div class="textareaDiv"><textarea id="tabBrifSummaryOfYesterday" rows="6" tabIndex="4"></textarea></div>
+			<div class="titleDiv">
+				<span class="titleSpan">Problem</span>
+				<span class="radioSpan">
+					<input type="radio" id="ucPAP_txbProblem1_Replace" name="ucPAP_txbProblem1" checked><label>覆蓋原文</label>
+					<input type="radio" id="ucPAP_txbProblem1_Append"  name="ucPAP_txbProblem1"><label>附加在原文之後</label>
+				</span>
+			</div>
+			<div class="textareaDiv"><textarea id="ucPAP_txbProblem1" rows="6" tabIndex="5"></textarea></div>
+			<div class="titleDiv">
+				<span class="titleSpan">Assessment</span>
+				<span class="radioSpan">
+					<input type="radio" id="ucPAP_txbAssessment1_Replace" name="ucPAP_txbAssessment1" checked><label>覆蓋原文</label>
+					<input type="radio" id="ucPAP_txbAssessment1_Append"  name="ucPAP_txbAssessment1"><label>附加在原文之後</label>
+				</span>
+			</div>
+			<div class="textareaDiv"><textarea id="ucPAP_txbAssessment1" rows="10" tabIndex="6"></textarea></div>
+			<div class="titleDiv">
+				<span class="titleSpan">Plan</span>
+				<span class="radioSpan">
+					<input type="radio" id="ucPAP_txbPlan1_Replace" name="ucPAP_txbPlan1" checked><label>覆蓋原文</label>
+					<input type="radio" id="ucPAP_txbPlan1_Append"  name="ucPAP_txbPlan1"><label>附加在原文之後</label>
+				</span>
+			</div>
+			<div class="textareaDiv"><textarea id="ucPAP_txbPlan1" rows="10" tabIndex="7"></textarea></div>
+			<div><button type="button" onclick=""> 清空編輯區 </button></div>
+			<h1>步驟二、生成連結</h1>
+			<div>
+				<label>模板的名稱: </label>
+				<input type="text" id="noteTitle" value="Note">
+				<button type="button" onclick="CreateScript()"> 生成連結 </button>
+			</div>
+			<h1>步驟三、將連結加到書籤列</h1>
+			<div>
+				<p>將下方連結拉至書籤列、或右鍵加入書籤</p>
+				<label>連結: </label><a id="link"></a><br>
+			</div>
+		</td>
+	</tr></table></body>
+</html>
