@@ -2,91 +2,182 @@
 <html>
 	<head>
 		<title>Progress Note Creator</title>
-		<link rel="stylesheet" href="style.css">
-		<script src="script.js"></script>
-		<meta charset="UTF-8">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="A creator to develope progress note template which was used by add the javascript link in bookmark">
 		<meta name="author" content="chyhcode">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="style.css">
+		<script src="script.js"></script>
 	</head>
-	<body><table class="wrapperTable"><tr>
-		<td class="sidenav">
-			<a></a>
-			<a></a>
-			<a></a>
-			<a></a>
-			<a></a>
-		</td>
-		<td class="main">
-			<h1>步驟一、填寫模板</h1>
-			<div class="titleDiv">
-				<span class="titleSpan">Subjective</span>
-				<span class="radioSpan">
-					<input type="radio" id="txbSubject_Replace" name="txbSubject" checked><label>覆蓋原文</label>
-					<input type="radio" id="txbSubject_Append"  name="txbSubject"><label>附加在原文之後</label>
-				</span>
+	<body class="container">
+		<h1>Progress Note Creator</h1>
+		<!-- 
+			NTUHWeb1_ProgressNoteMainTab_txbSubject
+			NTUHWeb1_ProgressNoteMainTab_txbObject
+			NTUHWeb1_ProgressNoteMainTab_txbBSIBundle
+			NTUHWeb1_ProgressNoteMainTab_tabBrifSummaryOfYesterday
+			NTUHWeb1_ProgressNoteMainTab_ucPAP_txbProblem1
+			NTUHWeb1_ProgressNoteMainTab_ucPAP_txbAssessment1
+			NTUHWeb1_ProgressNoteMainTab_ucPAP_txbPlan1 
+		-->
+		<div class="row mb-3">
+			<div class="col-12">
+				<label class="form-label" for="noteTitle">模板的名稱</label>
+				<input class="form-control" id="noteTitle" type="text" value="Note">
 			</div>
-			<div class="textareaDiv"><textarea id="txbSubject" rows="10" tabIndex="1"></textarea></div>
-			<div class="titleDiv">
-				<span class="titleSpan">Objective</span>
-				<span class="radioSpan">
-					<input type="radio" id="txbObject_Replace" name="txbObject"><label>覆蓋原文</label>
-					<input type="radio" id="txbObject_Append"  name="txbObject" checked><label>附加在原文之後</label>
-				</span>
+		</div>
+		
+		<div class="row mb-3 noteDiv" id="NTUHWeb1_ProgressNoteMainTab_txbSubject">
+			<div class="col-6 form-label mb-2">Subjective</div>
+			<div class="col-6 mb-2">
+				<div class="form-check form-check-inline">
+					<input class="form-check-input"  id="NTUHWeb1_ProgressNoteMainTab_txbSubject_Cancel" type="radio" name="NTUHWeb1_ProgressNoteMainTab_txbSubject" checked>
+					<label class="form-check-label" for="NTUHWeb1_ProgressNoteMainTab_txbSubject_Cancel">不使用</label>
+				</div>
+				<div class="form-check form-check-inline">
+					<input class="form-check-input"  id="NTUHWeb1_ProgressNoteMainTab_txbSubject_Replace" type="radio" name="NTUHWeb1_ProgressNoteMainTab_txbSubject">
+					<label class="form-check-label" for="NTUHWeb1_ProgressNoteMainTab_txbSubject_Replace">覆蓋原文</label>
+				</div>
+				<div class="form-check form-check-inline">
+					<input class="form-check-input"  id="NTUHWeb1_ProgressNoteMainTab_txbSubject_Append" type="radio" name="NTUHWeb1_ProgressNoteMainTab_txbSubject">
+					<label class="form-check-label" for="NTUHWeb1_ProgressNoteMainTab_txbSubject_Append">附加文字</label>
+				</div>
 			</div>
-			<div class="textareaDiv"><textarea id="txbObject" rows="10" tabIndex="2"></textarea></div>
-			<div class="titleDiv">
-				<span class="titleSpan">Assessment of Catheterization</span>
-				<span class="radioSpan">
-					<input type="radio" id="txbBSIBundle_Replace" name="txbBSIBundle" checked><label>覆蓋原文</label>
-					<input type="radio" id="txbBSIBundle_Append"  name="txbBSIBundle"><label>附加在原文之後</label>
-				</span>
+			<div class="col-12"><textarea class="form-control" id="NTUHWeb1_ProgressNoteMainTab_txbSubject_Text" rows="5" tabIndex="1"></textarea></div>			
+		</div>
+		
+		<div class="row mb-3 noteDiv" id="NTUHWeb1_ProgressNoteMainTab_txbObject">
+			<div class="col-6 form-label mb-2">Objective</div>
+			<div class="col-6 mb-2">
+				<div class="form-check form-check-inline">
+					<input class="form-check-input"  id="NTUHWeb1_ProgressNoteMainTab_txbObject_Cancel" type="radio" name="NTUHWeb1_ProgressNoteMainTab_txbObject" checked>
+					<label class="form-check-label" for="NTUHWeb1_ProgressNoteMainTab_txbObject_Cancel">不使用</label>
+				</div>
+				<div class="form-check form-check-inline">
+					<input class="form-check-input"  id="NTUHWeb1_ProgressNoteMainTab_txbObject_Replace" type="radio" name="NTUHWeb1_ProgressNoteMainTab_txbObject">
+					<label class="form-check-label" for="NTUHWeb1_ProgressNoteMainTab_txbObject_Replace">覆蓋原文</label>
+				</div>
+				<div class="form-check form-check-inline">
+					<input class="form-check-input"  id="NTUHWeb1_ProgressNoteMainTab_txbObject_Append" type="radio" name="NTUHWeb1_ProgressNoteMainTab_txbObject">
+					<label class="form-check-label" for="NTUHWeb1_ProgressNoteMainTab_txbObject_Append">附加文字</label>
+				</div>
 			</div>
-			<div class="textareaDiv"><textarea id="txbBSIBundle" rows="6" tabIndex="3"></textarea></div>
-			<div class="titleDiv">
-				<span class="titleSpan">Brief Summary of yesterday</span>
-				<span class="radioSpan">
-					<input type="radio" id="tabBrifSummaryOfYesterday_Replace" name="tabBrifSummaryOfYesterday" checked><label>覆蓋原文</label>
-					<input type="radio" id="tabBrifSummaryOfYesterday_Append"  name="tabBrifSummaryOfYesterday"><label>附加在原文之後</label>
-				</span>
+			<div class="col-12"><textarea class="form-control" id="NTUHWeb1_ProgressNoteMainTab_txbObject_Text" rows="5" tabIndex="1"></textarea></div>			
+		</div>
+		
+		<div class="row mb-3 noteDiv" id="NTUHWeb1_ProgressNoteMainTab_txbBSIBundle">
+			<div class="col-6 form-label mb-2">Assessment of Catheterization</div>
+			<div class="col-6 mb-2">
+				<div class="form-check form-check-inline">
+					<input class="form-check-input"  id="NTUHWeb1_ProgressNoteMainTab_txbBSIBundle_Cancel" type="radio" name="NTUHWeb1_ProgressNoteMainTab_txbBSIBundle" checked>
+					<label class="form-check-label" for="NTUHWeb1_ProgressNoteMainTab_txbBSIBundle_Cancel">不使用</label>
+				</div>
+				<div class="form-check form-check-inline">
+					<input class="form-check-input"  id="NTUHWeb1_ProgressNoteMainTab_txbBSIBundle_Replace" type="radio" name="NTUHWeb1_ProgressNoteMainTab_txbBSIBundle">
+					<label class="form-check-label" for="NTUHWeb1_ProgressNoteMainTab_txbBSIBundle_Replace">覆蓋原文</label>
+				</div>
+				<div class="form-check form-check-inline">
+					<input class="form-check-input"  id="NTUHWeb1_ProgressNoteMainTab_txbBSIBundle_Append" type="radio" name="NTUHWeb1_ProgressNoteMainTab_txbBSIBundle">
+					<label class="form-check-label" for="NTUHWeb1_ProgressNoteMainTab_txbBSIBundle_Append">附加文字</label>
+				</div>
 			</div>
-			<div class="textareaDiv"><textarea id="tabBrifSummaryOfYesterday" rows="6" tabIndex="4"></textarea></div>
-			<div class="titleDiv">
-				<span class="titleSpan">Problem</span>
-				<span class="radioSpan">
-					<input type="radio" id="ucPAP_txbProblem1_Replace" name="ucPAP_txbProblem1" checked><label>覆蓋原文</label>
-					<input type="radio" id="ucPAP_txbProblem1_Append"  name="ucPAP_txbProblem1"><label>附加在原文之後</label>
-				</span>
+			<div class="col-12"><textarea class="form-control" id="NTUHWeb1_ProgressNoteMainTab_txbBSIBundle_Text" rows="5" tabIndex="1"></textarea></div>			
+		</div>
+		
+		<div class="row mb-3 noteDiv" id="NTUHWeb1_ProgressNoteMainTab_tabBrifSummaryOfYesterday">
+			<div class="col-6 form-label mb-2">Brief Summary of yesterday</div>
+			<div class="col-6 mb-2">
+				<div class="form-check form-check-inline">
+					<input class="form-check-input"  id="NTUHWeb1_ProgressNoteMainTab_tabBrifSummaryOfYesterday_Cancel" type="radio" name="NTUHWeb1_ProgressNoteMainTab_tabBrifSummaryOfYesterday" checked>
+					<label class="form-check-label" for="NTUHWeb1_ProgressNoteMainTab_tabBrifSummaryOfYesterday_Cancel">不使用</label>
+				</div>
+				<div class="form-check form-check-inline">
+					<input class="form-check-input"  id="NTUHWeb1_ProgressNoteMainTab_tabBrifSummaryOfYesterday_Replace" type="radio" name="NTUHWeb1_ProgressNoteMainTab_tabBrifSummaryOfYesterday">
+					<label class="form-check-label" for="NTUHWeb1_ProgressNoteMainTab_tabBrifSummaryOfYesterday_Replace">覆蓋原文</label>
+				</div>
+				<div class="form-check form-check-inline">
+					<input class="form-check-input"  id="NTUHWeb1_ProgressNoteMainTab_tabBrifSummaryOfYesterday_Append" type="radio" name="NTUHWeb1_ProgressNoteMainTab_tabBrifSummaryOfYesterday">
+					<label class="form-check-label" for="NTUHWeb1_ProgressNoteMainTab_tabBrifSummaryOfYesterday_Append">附加文字</label>
+				</div>
 			</div>
-			<div class="textareaDiv"><textarea id="ucPAP_txbProblem1" rows="6" tabIndex="5"></textarea></div>
-			<div class="titleDiv">
-				<span class="titleSpan">Assessment</span>
-				<span class="radioSpan">
-					<input type="radio" id="ucPAP_txbAssessment1_Replace" name="ucPAP_txbAssessment1" checked><label>覆蓋原文</label>
-					<input type="radio" id="ucPAP_txbAssessment1_Append"  name="ucPAP_txbAssessment1"><label>附加在原文之後</label>
-				</span>
+			<div class="col-12"><textarea class="form-control" id="NTUHWeb1_ProgressNoteMainTab_tabBrifSummaryOfYesterday_Text" rows="5" tabIndex="1"></textarea></div>			
+		</div>
+		
+		<div class="row mb-3 noteDiv" id="NTUHWeb1_ProgressNoteMainTab_ucPAP_txbProblem1">
+			<div class="col-6 form-label mb-2">Problem</div>
+			<div class="col-6 mb-2">
+				<div class="form-check form-check-inline">
+					<input class="form-check-input"  id="NTUHWeb1_ProgressNoteMainTab_ucPAP_txbProblem1_Cancel" type="radio" name="NTUHWeb1_ProgressNoteMainTab_ucPAP_txbProblem1" checked>
+					<label class="form-check-label" for="NTUHWeb1_ProgressNoteMainTab_ucPAP_txbProblem1_Cancel">不使用</label>
+				</div>
+				<div class="form-check form-check-inline">
+					<input class="form-check-input"  id="NTUHWeb1_ProgressNoteMainTab_ucPAP_txbProblem1_Replace" type="radio" name="NTUHWeb1_ProgressNoteMainTab_ucPAP_txbProblem1">
+					<label class="form-check-label" for="NTUHWeb1_ProgressNoteMainTab_ucPAP_txbProblem1_Replace">覆蓋原文</label>
+				</div>
+				<div class="form-check form-check-inline">
+					<input class="form-check-input"  id="NTUHWeb1_ProgressNoteMainTab_ucPAP_txbProblem1_Append" type="radio" name="NTUHWeb1_ProgressNoteMainTab_ucPAP_txbProblem1">
+					<label class="form-check-label" for="NTUHWeb1_ProgressNoteMainTab_ucPAP_txbProblem1_Append">附加文字</label>
+				</div>
 			</div>
-			<div class="textareaDiv"><textarea id="ucPAP_txbAssessment1" rows="10" tabIndex="6"></textarea></div>
-			<div class="titleDiv">
-				<span class="titleSpan">Plan</span>
-				<span class="radioSpan">
-					<input type="radio" id="ucPAP_txbPlan1_Replace" name="ucPAP_txbPlan1" checked><label>覆蓋原文</label>
-					<input type="radio" id="ucPAP_txbPlan1_Append"  name="ucPAP_txbPlan1"><label>附加在原文之後</label>
-				</span>
+			<div class="col-12"><textarea class="form-control" id="NTUHWeb1_ProgressNoteMainTab_ucPAP_txbProblem1_Text" rows="5" tabIndex="1"></textarea></div>			
+		</div>
+		
+		<div class="row mb-3 noteDiv" id="NTUHWeb1_ProgressNoteMainTab_ucPAP_txbAssessment1">
+			<div class="col-6 form-label mb-2">Assessment</div>
+			<div class="col-6 mb-2">
+				<div class="form-check form-check-inline">
+					<input class="form-check-input"  id="NTUHWeb1_ProgressNoteMainTab_ucPAP_txbAssessment1_Cancel" type="radio" name="NTUHWeb1_ProgressNoteMainTab_ucPAP_txbAssessment1" checked>
+					<label class="form-check-label" for="NTUHWeb1_ProgressNoteMainTab_ucPAP_txbAssessment1_Cancel">不使用</label>
+				</div>
+				<div class="form-check form-check-inline">
+					<input class="form-check-input"  id="NTUHWeb1_ProgressNoteMainTab_ucPAP_txbAssessment1_Replace" type="radio" name="NTUHWeb1_ProgressNoteMainTab_ucPAP_txbAssessment1">
+					<label class="form-check-label" for="NTUHWeb1_ProgressNoteMainTab_ucPAP_txbAssessment1_Replace">覆蓋原文</label>
+				</div>
+				<div class="form-check form-check-inline">
+					<input class="form-check-input"  id="NTUHWeb1_ProgressNoteMainTab_ucPAP_txbAssessment1_Append" type="radio" name="NTUHWeb1_ProgressNoteMainTab_ucPAP_txbAssessment1">
+					<label class="form-check-label" for="NTUHWeb1_ProgressNoteMainTab_ucPAP_txbAssessment1_Append">附加文字</label>
+				</div>
 			</div>
-			<div class="textareaDiv"><textarea id="ucPAP_txbPlan1" rows="10" tabIndex="7"></textarea></div>
-			<div><button type="button" onclick=""> 清空編輯區 </button></div>
-			<h1>步驟二、生成連結</h1>
-			<div>
-				<label>模板的名稱: </label>
-				<input type="text" id="noteTitle" value="Note">
-				<button type="button" onclick="CreateScript()"> 生成連結 </button>
+			<div class="col-12"><textarea class="form-control" id="NTUHWeb1_ProgressNoteMainTab_ucPAP_txbAssessment1_Text" rows="5" tabIndex="1"></textarea></div>			
+		</div>
+		
+		<div class="row mb-3 noteDiv" id="NTUHWeb1_ProgressNoteMainTab_ucPAP_txbPlan1">
+			<div class="col-6 form-label mb-2">Plan</div>
+			<div class="col-6 mb-2">
+				<div class="form-check form-check-inline">
+					<input class="form-check-input"  id="NTUHWeb1_ProgressNoteMainTab_ucPAP_txbPlan1_Cancel" type="radio" name="NTUHWeb1_ProgressNoteMainTab_ucPAP_txbPlan1" checked>
+					<label class="form-check-label" for="NTUHWeb1_ProgressNoteMainTab_ucPAP_txbPlan1_Cancel">不使用</label>
+				</div>
+				<div class="form-check form-check-inline">
+					<input class="form-check-input"  id="NTUHWeb1_ProgressNoteMainTab_ucPAP_txbPlan1_Replace" type="radio" name="NTUHWeb1_ProgressNoteMainTab_ucPAP_txbPlan1">
+					<label class="form-check-label" for="NTUHWeb1_ProgressNoteMainTab_ucPAP_txbPlan1_Replace">覆蓋原文</label>
+				</div>
+				<div class="form-check form-check-inline">
+					<input class="form-check-input"  id="NTUHWeb1_ProgressNoteMainTab_ucPAP_txbPlan1_Append" type="radio" name="NTUHWeb1_ProgressNoteMainTab_ucPAP_txbPlan1">
+					<label class="form-check-label" for="NTUHWeb1_ProgressNoteMainTab_ucPAP_txbPlan1_Append">附加文字</label>
+				</div>
 			</div>
-			<h1>步驟三、將連結加到書籤列</h1>
-			<div>
-				<p>將下方連結拉至書籤列、或右鍵加入書籤</p>
-				<label>連結: </label><a id="link"></a><br>
-			</div>
-		</td>
-	</tr></table></body>
+			<div class="col-12"><textarea class="form-control" id="NTUHWeb1_ProgressNoteMainTab_ucPAP_txbPlan1_Text" rows="5" tabIndex="1"></textarea></div>			
+		</div>
+		
+		<div class="mb-3">
+			<button type="button" class="btn btn-primary" onclick="AlertCreateScript()">生成連結</button>
+			<button type="button" class="btn btn-danger" onclick="AlertCleanScript()">清空編輯區</button>
+		</div>
+		<div id="alertCreateScript" class="alert alert-success" role="alert" hidden>
+			<p>連結 <a id="link" href="#" class="alert-link"></a> 已建立！請將連結拖拉書籤列、或右鍵新增書籤，若手動修改程式碼後請儲存已更改連結。</p>
+			<textarea class="form-control mb-3" id="linkScript" rows="10" tabIndex="8"></textarea>
+			<button type="button" class="btn btn-primary" onclick="ScriptToLink()">儲存修改至連結</button>
+		</div>
+		<div id="alertCleanScript" class="alert alert-danger" role="alert" hidden>
+			<p>此動作將清空以填寫之模板，您確定要清除?</p>
+			<button type="button" class="btn btn-danger" onclick="ClearScript()">清除</button>
+			<button type="button" class="btn btn-secondary" onclick="CancelClearScript()">取消</button>
+		</div>
+		<br>
+	</body>
 </html>

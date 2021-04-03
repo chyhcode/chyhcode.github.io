@@ -1,79 +1,79 @@
-function WriteProgressNote()
-{	
-	javascript:
-	var ids = ['txbSubject', 'txbObject', 'txbBSIBundle', 'tabBrifSummaryOfYesterday', 'ucPAP_txbProblem1', 'ucPAP_txbAssessment1', 'ucPAP_txbPlan1'];
-	var txt = ['xxx','xxx','xxx','xxx','xxx','xxx','xxx'];
-	var replaceMode = [true, false, true, true, true, true, true];
-	function WriteProgressNote(index) 
-	{ 
-		if (replaceMode[index]) document.getElementById('NTUHWeb1_ProgressNoteMainTab_' + ids[index]).value = txt[index]; 
-		else document.getElementById('NTUHWeb1_ProgressNoteMainTab_' + ids[index]).value += txt[index];
-	} 
-	for (var i=0; i<7; ++i) WriteProgressNote(i);
+function GoalFunction(){
+	/* this is the goal of CreateScript() want to create */
+	/* javascript: */
+	WriteProgress();
+	function WriteProgress()
+	{
+		document.getElementById('NTUHWeb1_ProgressNoteMainTab_txbSubject').value = 'sss';
+		document.getElementById('NTUHWeb1_ProgressNoteMainTab_txbObject').value += 'ooo';
+		document.getElementById('NTUHWeb1_ProgressNoteMainTab_txbBSIBundle').value = 'Foley';
+		document.getElementById('NTUHWeb1_ProgressNoteMainTab_tabBrifSummaryOfYesterday').value = '';
+		document.getElementById('NTUHWeb1_ProgressNoteMainTab_ucPAP_txbProblem1').value = 'ppp';
+		document.getElementById('NTUHWeb1_ProgressNoteMainTab_ucPAP_txbAssessment1').value = 'aaa';
+		document.getElementById('NTUHWeb1_ProgressNoteMainTab_ucPAP_txbPlan1').value = 'ppp';
+	}
 }
 
+function CreateScript(){
+	var noteDivs = document.getElementsByClassName('noteDiv');
+	var script = 'javascript: WriteProgress(); function WriteProgress(){ ';
+	for (var i=0; i<noteDivs.length; ++i) script += NoteToScript(noteDivs[i]);
+	script += '}';
+	document.getElementById('linkScript').value = script;
+}
 
-function CreateScript()
-{
-	var ids = ['txbSubject', 'txbObject', 'txbBSIBundle', 'tabBrifSummaryOfYesterday', 'ucPAP_txbProblem1', 'ucPAP_txbAssessment1', 'ucPAP_txbPlan1'];
-	var txt = ['','','','','','',''];
-	var replaceMode = [false,false,false,false,false,false,false];
-	for (var i=0; i<7; ++i)
-	{
-		replaceMode[i] = document.getElementById(ids[i]+"_Replace").checked;
-		txt[i] = "\'" + document.getElementById(ids[i]).value.replace(/(\r\n)|(\n)/g,"\\n") + "\'";
-		ids[i] = "\'" + ids[i] + "\'";
-	}
+function NoteToScript(noteDiv){
 	
-	var scriptIds = "javascript: var ids = [" + ids.toString() + "]; ";
-	console.log(ids);
-	console.log(scriptIds);
+	/* document.getElementById('NTUHWeb1_ProgressNoteMainTab_txbSubject').value = 'sss'; */
+	var id = noteDiv.id;
+	var txt = document.getElementById(id+'_Text').value.replace(/(\r\n)|(\n)/g,"\\n");
 	
-	var scriptTxt = "var txt = [" + txt.toString() + "]; ";
+	if( document.getElementById(id+'_Replace').checked ) 	txt = "document.getElementById('" + id + "').value = '" + txt + "'; ";
+	else if( document.getElementById(id+'_Append').checked) txt = "document.getElementById('" + id + "').value += '" + txt + "'; ";
+	else txt = '';
+	
 	console.log(txt);
-	console.log(scriptTxt);
-	
-	var scriptMode = "var replaceMode = [" + replaceMode.toString() + "]; ";
-	console.log(replaceMode);
-	console.log(scriptMode);
-	
-	var scriptWrite = "function WriteProgressNote(index) { if (replaceMode[index]) document.getElementById('NTUHWeb1_ProgressNoteMainTab_' + ids[index]).value = txt[index]; else document.getElementById('NTUHWeb1_ProgressNoteMainTab_' + ids[index]).value += txt[index];} for (var i=0; i<7; ++i) WriteProgressNote(i);";
-	
-	document.getElementById('link').href  = scriptIds + scriptTxt + scriptMode + scriptWrite;
+	return txt;
+}
+
+function AlertCreateScript()
+{
+	CreateScript();
+	ScriptToLink();
+	document.getElementById('alertCleanScript').setAttribute('hidden','');
+	document.getElementById('alertCreateScript').removeAttribute('hidden');
+}
+
+function ScriptToLink()
+{
+	document.getElementById('link').href = document.getElementById('linkScript').value;
 	document.getElementById('link').innerText = document.getElementById('noteTitle').value;
 	console.log(document.getElementById('link').href);
 }
 
-/* 
-	javascript: WriteTestNote();
-	function WriteTestNote()
+function AlertCleanScript()
+{
+	document.getElementById('alertCreateScript').setAttribute('hidden','');
+	document.getElementById('alertCleanScript').removeAttribute('hidden');
+}
+
+function ClearScript()
+{
+	var textareas = document.getElementsByTagName('TEXTAREA');
+	for (var i=textareas.length-1; i>=0; --i)
 	{
-	document.getElementById('output').value = 'abcdefg\r\n1234';
+		textareas[i].value = '';
 	}
-*/
+	document.getElementById('alertCleanScript').setAttribute('hidden','');
+}
+
+function CancelClearScript()
+{
+	document.getElementById('alertCleanScript').setAttribute('hidden','');
+}
+
 function StringToEscapedCharacter( t )
 {
 	return t.replace(/(\r\n)|(\n)/g,"\\n");
 }
 
-function CreateTestScript()
-{
-	var script1 = "javascript: WriteTestNote(); function WriteTestNote(){document.getElementById('output').value = '";
-	var script2 = document.getElementById('input').value.replace(/(\r\n)|(\n)/g,"\\n");
-	var script3 = "';}";
-	console.log(script1 + script2 + script3);
-	document.getElementById('a').href = script1 + script2 + script3;
-}
-
-function copyTextArea()
-{
-	document.getElementById('output').value = document.getElementById('input').value.replace(/(\r\n)|(\n)/g,"\\n");
-}
-
-/* let str = htmlStr.replace(/(\r\n)|(\n)/g,'<br>')
-*/
-
-function LoopForTextArea()
-{
-	document.getElementById('output').value = '4';
-}
