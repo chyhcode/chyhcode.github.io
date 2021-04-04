@@ -6,12 +6,7 @@ function GoalFunction(){
 	{
 		document.getElementById('NTUHWeb1_ProgressNoteMainTab_txbSubject').value = 'sss';
 		document.getElementById('NTUHWeb1_ProgressNoteMainTab_txbObject').value += 'ooo';
-		document.getElementById('NTUHWeb1_ProgressNoteMainTab_txbBSIBundle').value = 'Foley';
-		document.getElementById('NTUHWeb1_ProgressNoteMainTab_tabBrifSummaryOfYesterday').value = '';
-		document.getElementById('NTUHWeb1_ProgressNoteMainTab_ucPAP_txbProblem1').value = 'ppp';
-		document.getElementById('NTUHWeb1_ProgressNoteMainTab_ucPAP_txbAssessment1').value = 'aaa';
-		document.getElementById('NTUHWeb1_ProgressNoteMainTab_ucPAP_txbPlan1').value = 'ppp';
-	}
+		document.getElementById('NTUHWeb1_ProgressNoteMainTab_txbBSIBundle').value = 'Foley';	}
 }
 
 function CreateScript(){
@@ -26,11 +21,13 @@ function NoteToScript(noteDiv){
 	
 	/* document.getElementById('NTUHWeb1_ProgressNoteMainTab_txbSubject').value = 'sss'; */
 	var id = noteDiv.id;
-	var txt = document.getElementById(id+'_Text').value.replace(/(\r\n)|(\n)/g,"\\n");
+	var txt = document.getElementById(id+'_Text').value.replace(/(\r\n)|(\n)/g,"\\n").trim();
 	
-	if( document.getElementById(id+'_Replace').checked ) 	txt = "document.getElementById('" + id + "').value = '" + txt + "'; ";
-	else if( document.getElementById(id+'_Append').checked) txt = "document.getElementById('" + id + "').value += '" + txt + "'; ";
-	else txt = '';
+	if( txt=='' ) return '';
+	if( document.getElementById(id+'_Replace').checked ) 
+		txt = "document.getElementById('" + id + "').value = '" + txt + "'; ";
+	else
+		txt = "document.getElementById('" + id + "').value += '" + txt + "'; ";
 	
 	console.log(txt);
 	return txt;
