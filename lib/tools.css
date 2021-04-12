@@ -1,0 +1,11 @@
+.htmlHigh {	
+    display: block;
+    margin: 16px 0px;
+	border: 1px solid #DDDDDD;
+    padding: 12px;
+    background-color: #F8F8F8;
+	
+    word-wrap: break-word;
+    font-family: Consolas;
+    overflow: auto;
+}
