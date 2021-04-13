@@ -1,3 +1,6 @@
+/* https://github.com/chyhcode/chyhcode.github.io/blob/main/lib/tools.js */
+/* https://chyhcode.github.io/lib/tools.js */
+
 function GoalFunction(){
 	/* this is the goal of CreateScript() want to create */
 	/* javascript: */
