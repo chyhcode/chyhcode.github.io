@@ -17,9 +17,6 @@
                     var url = routes[fragment];
                     // 若該關鍵字有設定對應的網址，則轉跳到該網址中，若沒有則回到首頁
                     location.href = url ? url : './index.html';
-                })
-				.catch(error => {
-                    console.log(error);
                 });
         })();
     </script>
