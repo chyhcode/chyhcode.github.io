@@ -27,10 +27,10 @@
 				<li><a href="javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/Ward/InsertProgressNoteContent.aspx' + location.search, 'InsertProgressNoteContent' );">程</A></li>
 				<li><a href="javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/PatientBasicInfoEdit/PatientMedicalRecordListQuery.aspx' + location.search, 'PatientMedicalRecordListQuery' );">史</A></li>
 				<li><a href="javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/MedicationHistory/Default.aspx' + location.search, 'MedicationHistory' );">藥史</A></li>
-				<li><a href="javascript: p=new URL(location).searchParams; p.set('Func','ProgressNote'); open('http://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/PatientBasicInfoEdit/SimpleInfoShowUsingPlaceHolder.aspx?' + p.toString(), p.get('Func'));">病程</A></li>
-				<li><a href="javascript: p=new URL(location).searchParams; p.set('Func','AdmissionNote'); open('http://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/PatientBasicInfoEdit/SimpleInfoShowUsingPlaceHolder.aspx?' + p.toString(), p.get('Func'));">入摘</A></li>
-				<li><a href="javascript: p=new URL(location).searchParams; p.set('Func','OPNoteList'); open('http://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/PatientBasicInfoEdit/SimpleInfoShowUsingPlaceHolder.aspx?' + p.toString(), p.get('Func'));">術紀</A></li>
-				<li><a href="javascript: p=new URL(location).searchParams; p.set('Func','DischargeSummaryByPersonID'); open('http://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/PatientBasicInfoEdit/SimpleInfoShowUsingPlaceHolder.aspx?' + p.toString(), p.get('Func'));">出摘</A></li>
+				<li><a href="javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/PatientBasicInfoEdit/SimpleInfoShowUsingPlaceHolder.aspx?' + location.search.replace(/Func=[A-Za-z]+/,'') + '&Func=ProgressNote', 'ProgressNote');">病程</A></li>
+				<li><a href="javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/PatientBasicInfoEdit/SimpleInfoShowUsingPlaceHolder.aspx?' + location.search.replace(/Func=[A-Za-z]+/,'') + '&Func=AdmissionNote', 'AdmissionNote');">入摘</A></li>
+				<li><a href="javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/PatientBasicInfoEdit/SimpleInfoShowUsingPlaceHolder.aspx?' + location.search.replace(/Func=[A-Za-z]+/,'') + '&Func=OPNoteList', 'OPNoteList');">術紀</A></li>
+				<li><a href="javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/PatientBasicInfoEdit/SimpleInfoShowUsingPlaceHolder.aspx?' + location.search.replace(/Func=[A-Za-z]+/,'') + '&Func=DischargeSummaryByPersonID', 'DischargeSummaryByPersonID');">出摘</A></li>
 				<li><a href="javascript: open('http://hisaw.ntuh.gov.tw/WebApplication/Clinics/WinFormPopupMedicalRecord.aspx' + location.search, 'WinFormPopupMedicalRecord' );">EMR</A></li>
 			</ul></td>
 			<td><ul>
@@ -46,8 +46,8 @@
 				<li><a href="javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/ElectronicMedicalReportViewer/MobileMasterPage.aspx'+'?'+chartno[1]), 'MobileMasterPage' );">X報X</A></li>
 				<li><a href="javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/PatientBasicInfoEdit/PACSImageShowList2.aspx' + location.search, 'PACSImageShowList2' );">PACS</A></li>
 				<li><a href="javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/ElectronicMedicalReportViewer/MedicalReportContent.aspx' + location.search, 'MedicalReportContent' );">報</A></li>
-				<li><a href="javascript: p=new URL(location).searchParams; p.set('Func','RISReport'); open('http://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/PatientBasicInfoEdit/SimpleInfoShowUsingPlaceHolder.aspx?' + p.toString(), p.get('Func'));">影報</A></li>
-				<li><a href="javascript: p=new URL(location).searchParams; p.set('Func','SonoPERReport'); open('http://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/PatientBasicInfoEdit/SimpleInfoShowUsingPlaceHolder.aspx?' + p.toString(), p.get('Func'));">超報</A></li>
+				<li><a href="javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/PatientBasicInfoEdit/SimpleInfoShowUsingPlaceHolder.aspx?' + location.search.replace(/Func=[A-Za-z]+/,'') + '&Func=RISReport', 'RISReport');">影報</A></li>
+				<li><a href="javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/PatientBasicInfoEdit/SimpleInfoShowUsingPlaceHolder.aspx?' + location.search.replace(/Func=[A-Za-z]+/,'') + '&Func=SonoPERReport', 'SonoPERReport');">超報</A></li>
 			</ul></td>
 			<td><ul>
 				<li><a href="javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/Ward/DoctorEnterOrder.aspx' + location.search, 'DoctorEnterOrder' );">診</A></li>
@@ -67,7 +67,7 @@
 				<li><a href="javascript: open('http://hisaw.ntuh.gov.tw/WebApplication/Clinics/DiagCertificate_New.aspx' + location.search, 'DiagCertificate_New' );">證</A></li>
 				<li><a href="javascript: open('http://hisaw.ntuh.gov.tw/WebApplication/Clinics/ClinicRoomAdministration.aspx' + location.search+'?I'+accountidse[0], 'ClinicRoomAdministration' );">X約X</A></li>
 				<li><a href="javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/Ward/InsertDisChargeNoteContent.aspx' + location.search, 'InsertDisChargeNoteContent' );">出</A></li>
-				<li><a href="javascript: p=new URL(location).searchParams; p.set('Func','FutureSchedule'); open('http://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/PatientBasicInfoEdit/SimpleInfoShowUsingPlaceHolder.aspx?' + p.toString(), p.get('Func'));">未來</A></li>
+				<li><a href="javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/PatientBasicInfoEdit/SimpleInfoShowUsingPlaceHolder.aspx?' + location.search.replace(/Func=[A-Za-z]+/,'') + '&Func=FutureSchedule', 'FutureSchedule');">未來</A></li>
 			</ul></td>
 		</tr>
 	</table>
