@@ -61,6 +61,7 @@
 				</td>
 				<td>
 					<a href="javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/Nursing/VitalSign_TPR.aspx' + location.search, 'VitalSign_TPR' );">生</a>
+					<a href='javascript: document.querySelectorAll("#NTUHWeb1_TPRDrugSvgBox_svgContainer > svg > [onmouseout]").forEach(function(svg){svg.innerHTML="<title>"+(svg.getAttribute("onmouseover")||svg.getAttribute("onmousemove")).match(/"(.+)"/)[1]+"</title>"+svg.innerHTML;svg.removeAttribute("onmouseover");svg.removeAttribute("onmousemove");svg.removeAttribute("onmouseout");})' title="在TPR頁面點擊書籤按鈕，修正chrome沒辦法顯示藥物的錯誤">生(chrome修正)</a>
 					<a href="javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/Nursing/CatheterCare.aspx' + location.search, 'CatheterCare' );">管</a>
 					<a href="javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/Nursing/NursingProgressNote.aspx' + location.search, 'NursingProgressNote' );">護程</a>
 					<a href="javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/Ward/OffDutyNurV2.aspx' + location.search, 'OffDutyNurV2' );">護交</a>
