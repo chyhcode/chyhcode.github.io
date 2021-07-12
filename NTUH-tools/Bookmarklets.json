@@ -1,0 +1,243 @@
+[
+	{
+		"name": "病史",
+		"ul": [
+			{
+				"name": "主",
+				"href": "javascript:{open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/Ward/ConfirmDiagnosisOrder.aspx'+location.search,'ConfirmDiagnosisOrder');}"
+			},
+			{
+				"name": "程",
+				"href": "javascript:{open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/Ward/InsertProgressNoteContent.aspx'+location.search,'InsertProgressNoteContent');}"
+			},
+			{
+				"name": "史",
+				"href": "javascript:{open('http://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/PatientBasicInfoEdit/PatientMedicalRecordListQuery.aspx'+location.search,'PatientMedicalRecordListQuery');}"
+			},
+			{
+				"name": "醫療簡歷",
+				"href": "javascript:{open('http://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/PatientBasicInfoEdit/SimpleInfoShowUsingPlaceHolder.aspx'+location.search.replace(/Func=[A-Za-z]+/,'')+'&Func=PatientBriefMedicalRecord','PatientBriefMedicalRecord');}"
+			},
+			{
+				"name": "藥史",
+				"href": "javascript:{open('http://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/MedicationHistory/Default.aspx'+location.search,'MedicationHistory');}"
+			},
+			{
+				"name": "程s",
+				"href": "javascript:{open('http://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/PatientBasicInfoEdit/SimpleInfoShowUsingPlaceHolder.aspx'+location.search.replace(/Func=[A-Za-z]+/,'')+'&Func=ProgressNote','ProgressNote');}"
+			},
+			{
+				"name": "入摘",
+				"href": "javascript:{open('http://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/PatientBasicInfoEdit/SimpleInfoShowUsingPlaceHolder.aspx'+location.search.replace(/Func=[A-Za-z]+/,'')+'&Func=AdmissionNote','AdmissionNote');}"
+			},
+			{
+				"name": "術紀",
+				"href": "javascript:{open('http://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/PatientBasicInfoEdit/SimpleInfoShowUsingPlaceHolder.aspx'+location.search.replace(/Func=[A-Za-z]+/,'')+'&Func=OPNoteList','OPNoteList');}"
+			},
+			{
+				"name": "出摘s",
+				"href": "javascript:{open('http://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/PatientBasicInfoEdit/SimpleInfoShowUsingPlaceHolder.aspx'+location.search.replace(/Func=[A-Za-z]+/,'')+'&Func=DischargeSummaryByPersonID','DischargeSummaryByPersonID');}"
+			},
+			{
+				"name": "EMR",
+				"href": "javascript:{open('http://hisaw.ntuh.gov.tw/WebApplication/Clinics/WinFormPopupMedicalRecord.aspx'+location.search,'WinFormPopupMedicalRecord');}"
+			},
+			{
+				"name": "EMR(新)",
+				"href": "javascript:{open('http://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/PatientBasicInfoEdit/SimpleShowiframePage.aspx'+location.search,'SimpleShowiframePage');}"
+			}
+		]
+	},
+	{
+		"name": "查詢",
+		"ul": [
+			{
+				"name": "護理作業",
+				"href": "javascript:{open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/Nursing/MainMenu_V2.aspx'+location.search,'VitalSign_TPR');}"
+			},
+			{
+				"name": "生",
+				"href": "javascript:{open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/Nursing/VitalSign_TPR.aspx'+location.search,'VitalSign_TPR');}"
+			},
+			{
+				"name": "給藥紀錄",
+				"href": "javascript:{open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/Ward/DrugGivenNote.aspx'+location.search,'VitalSign_TPR');}"
+			},
+			{
+				"name": "管路",
+				"href": "javascript:{open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/Nursing/CatheterCare.aspx'+location.search,'CatheterCare');}"
+			},
+			{
+				"name": "IO",
+				"href": "javascript:{open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/Nursing/Estimate_IO_Summery.aspx'+location.search,'Estimate_IO_Summery');}"
+			},
+			{
+				"name": "治療及處置紀錄",
+				"href": "javascript:{open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/Nursing/WorkList_ListCheck_V2.aspx'+location.search,'WorkList_ListCheck_V2');}"
+			},
+			{
+				"name": "醫囑簽收",
+				"href": "javascript:{open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/Nursing/WorkList_OrderCheck.aspx'+location.search,'WorkList_ListCheck_V2');}"
+			},
+			{
+				"name": "護程",
+				"href": "javascript:{open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/Nursing/NursingProgressNote.aspx'+location.search,'NursingProgressNote');}"
+			},
+			{
+				"name": "護交",
+				"href": "javascript:{open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/Ward/OffDutyNurV2.aspx'+location.search,'OffDutyNurV2');}"
+			},
+			{
+				"name": "護理問題與措施紀錄",
+				"href": "javascript:{open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/Nursing/Problem_PlanNote.aspx'+location.search,'Problem_PlanNote');}"
+			},
+			{
+				"name": "囑",
+				"href": "javascript:{open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/Ward/OrderDisplay.aspx'+location.search,'OrderDisplay');}"
+			},
+			{
+				"name": "檢排",
+				"href": "javascript:{open('http://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/PatientOrderScheduling/OrderScheduling.aspx'+location.search,'OrderScheduling');}"
+			},
+			{
+				"name": "術排",
+				"href": "javascript:{open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/OPManagement/OrderOpSchedule.aspx'+location.search,'OrderOpSchedule');}"
+			}
+		]
+	},
+	{
+		"name": "報&影",
+		"ul": [
+			{
+				"name": "報(未完成)",
+				"href": "javascript:{open('http://ihisaw.ntuh.gov.tw/WebApplication/ElectronicMedicalReportViewer/MobileMasterPage.aspx'+'?'+chartno[1]),'MobileMasterPage');}"
+			},
+			{
+				"name": "報",
+				"href": "javascript:{open('http://ihisaw.ntuh.gov.tw/WebApplication/ElectronicMedicalReportViewer/MedicalReportContent.aspx'+location.search,'MedicalReportContent');}"
+			},
+			{
+				"name": "PACS",
+				"href": "javascript:{open('http://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/PatientBasicInfoEdit/PACSImageShowList2.aspx'+location.search,'PACSImageShowList2');}"
+			},
+			{
+				"name": "歷史報告",
+				"href": "javascript:{open('http://ihisaw.ntuh.gov.tw/WebApplication/ElectronicMedicalReportViewer/ExternalPage/DWHistoricalLabReport.aspx'+location.search+'&hfdPersonid='+(location.search.match(/PersonID=([a-zA-Z][0-9]{9})/)[1]||''),'DWHistoricalLabReport');}"
+			},
+			{
+				"name": "影醫報告",
+				"href": "javascript:{open('http://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/PatientBasicInfoEdit/SimpleInfoShowUsingPlaceHolder.aspx'+location.search.replace(/Func=[A-Za-z]+/,'')+'&Func=RISReport','RISReport');"
+			},
+			{
+				"name": "超音波報告",
+				"href": "javascript:{open('http://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/PatientBasicInfoEdit/SimpleInfoShowUsingPlaceHolder.aspx'+location.search.replace(/Func=[A-Za-z]+/,'')+'&Func=SonoPERReport','SonoPERReport');"
+			}
+		]
+	},
+	{
+		"name": "處置",
+		"ul": [
+			{
+				"name": "診",
+				"href": "javascript:{open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/Ward/DoctorEnterOrder.aspx'+location.search,'DoctorEnterOrder');}"
+			},
+			{
+				"name": "處",
+				"href": "javascript:{open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/Ward/MedicationV2.aspx'+location.search,'MedicationV2');}"
+			},
+			{
+				"name": "食",
+				"href": "javascript:{open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/Ward/DoctorDietMain.aspx'+location.search,'DoctorDietMain');}"
+			},
+			{
+				"name": "照",
+				"href": "javascript:{open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/Ward/NotifyOtherDoctor.aspx'+location.search,'NotifyOtherDoctor');}"
+			},
+			{
+				"name": "血",
+				"href": "javascript:{open('http://ihisaw.ntuh.gov.tw/WebApplication/BloodStock/Pages/His/CreateOrder.aspx'+location.search,'BloodStockCreateOrder');}"
+			},
+			{
+				"name": "同意書",
+				"href": "javascript:{open('http://ihisaw.ntuh.gov.tw/WebApplication/ConsentFormWeb/CreateConsentForm.aspx'+location.search,'CreateConsentForm');}"
+			},
+			{
+				"name": "黃單",
+				"href": "javascript:{open('http://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/Chemotherapy/MainPage.aspx'+location.search,'ChemotherapyMainPage');}"
+			}
+		]
+	},
+	{
+		"name": "入院",
+		"ul": [
+			{
+				"name": "入",
+				"href": "javascript:{open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/Ward/InsertAdmissionNoteContent.aspx'+location.search,'InsertAdmissionNoteContent');}"
+			},
+			{
+				"name": "績效",
+				"href": "javascript:{open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/Ward/EnterTakeCarePersonInfo.aspx'+location.search,'EnterTakeCarePersonInfo');}"
+			},
+			{
+				"name": "身分",
+				"href": "javascript:{open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/Ward/ConfirmDiagnosisOrder.aspx'+location.search,'ConfirmDiagnosisOrder');}"
+			}
+		]
+	},
+	{
+		"name": "出院",
+		"ul": [
+			{
+				"name": "準",
+				"href": "javascript:{open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/Ward/DoctorPrePareDischargeV2.aspx'+location.search,'DoctorPrePareDischargeV2');}"
+			},
+			{
+				"name": "證",
+				"href": "javascript:{open('http://hisaw.ntuh.gov.tw/WebApplication/Clinics/DiagCertificate_New.aspx'+location.search,'DiagCertificate_New');}"
+			},
+			{
+				"name": "約(未完成)",
+				"href": "javascript:{open('http://hisaw.ntuh.gov.tw/WebApplication/Clinics/ClinicRoomAdministration.aspx'+location.search+'?I'+accountidse[0],'ClinicRoomAdministration');}"
+			},
+			{
+				"name": "出",
+				"href": "javascript:{open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/Ward/InsertDisChargeNoteContent.aspx'+location.search,'InsertDisChargeNoteContent');}"
+			},
+			{
+				"name": "未來",
+				"href": "javascript:{open('http://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/PatientBasicInfoEdit/SimpleInfoShowUsingPlaceHolder.aspx'+location.search.replace(/Func=[A-Za-z]+/,'')+'&Func=FutureSchedule','FutureSchedule');"
+			}
+		]
+	},
+	{
+		"name": "其他",
+		"ul": [
+			{
+				"name": "病房首頁強化",
+				"href": "javascript:if(window.NodeList&&!NodeList.prototype.forEach){NodeList.prototype.forEach=Array.prototype.forEach;}document.querySelectorAll('.tableText, .tableText2').forEach(function(){tr.searchParams=tr.cells[8].firstElementChild.firstElementChild.getAttribute('onclick').match(/(\\?.+?)'/)[1];tr.cells[4].searchParams=tr.searchParams;tr.cells[4].onclick=openCommonHistory;tr.cells[7].searchParams=tr.searchParams;tr.cells[7].onclick=openCommonTask;});function openCommonHistory(){var u='http://ihisaw.ntuh.gov.tw/WebApplication/';open(u+'OtherIndependentProj/PatientBasicInfoEdit/SimpleInfoShowUsingPlaceHolder.aspx'+this.searchParams.replace(/Func=[A-Za-z]+/,'')+'&Func=PatientBriefMedicalRecord','PatientBriefMedicalRecord');open(u+'OtherIndependentProj/PatientBasicInfoEdit/PatientMedicalRecordListQuery.aspx'+this.searchParams,'PatientMedicalRecordListQuery');open(u+'OtherIndependentProj/PatientBasicInfoEdit/SimpleInfoShowUsingPlaceHolder.aspx'+this.searchParams.replace(/Func=[A-Za-z]+/,'')+'&Func=ProgressNote','ProgressNote');open(u+'ElectronicMedicalReportViewer/ExternalPage/DWHistoricalLabReport.aspx'+this.searchParams+'&hfdPersonid='+(this.searchParams.match(/PersonID=([a-zA-Z][0-9]{9})/)[1]||''),'DWHistoricalLabReport');open(u+'OtherIndependentProj/PatientBasicInfoEdit/SimpleInfoShowUsingPlaceHolder.aspx'+this.searchParams.replace(/Func=[A-Za-z]+/,'')+'&Func=RISReport','RISReport');open(u+'OtherIndependentProj/MedicationHistory/Default.aspx'+this.searchParams,'MedicationHistory');open(u+'OtherIndependentProj/PatientBasicInfoEdit/SimpleShowiframePage.aspx'+this.searchParams,'SimpleShowiframePage');}function openCommonTask(){var u='http://ihisaw.ntuh.gov.tw/WebApplication/';open(u+'InPatient/Ward/ConfirmDiagnosisOrder.aspx'+this.searchParams,'ConfirmDiagnosisOrder');open(u+'InPatient/Nursing/VitalSign_TPR.aspx'+this.searchParams,'VitalSign_TPR');open(u+'InPatient/Nursing/Estimate_IO_Summery.aspx'+this.searchParams,'Estimate_IO_Summery');open(u+'InPatient/Nursing/NursingProgressNote.aspx'+this.searchParams,'NursingProgressNote');open(u+'InPatient/Ward/OffDutyNurV2.aspx'+this.searchParams,'OffDutyNurV2');open(u+'ElectronicMedicalReportViewer/MedicalReportContent.aspx'+this.searchParams,'MedicalReportContent');open(u+'OtherIndependentProj/PatientBasicInfoEdit/PACSImageShowList2.aspx'+this.searchParams,'PACSImageShowList2');open(u+'InPatient/Ward/InsertProgressNoteContent.aspx'+this.searchParams,'InsertProgressNoteContent');open(u+'InPatient/Ward/DoctorEnterOrder.aspx'+this.searchParams,'DoctorEnterOrder');open(u+'InPatient/Ward/MedicationV2.aspx'+this.searchParams,'MedicationV2');open(u+'InPatient/Ward/DoctorDietMain.aspx'+this.searchParams,'DoctorDietMain');}"
+			},
+			{
+				"name": "病人清單",
+				"href": "javascript:{let t='';document.querySelectorAll('.tableText,.tableText2').forEach(function(r){function td(i){return r.cells[i].textContent.trim()};t+=td(2)+'-'+td(3).slice(1)+' '+td(4)+' '+td(5)+' '+td(7).match(/[0-9]+/)[0]+td(6)+' '+td(9)+' '+td(12)+'\r\n';});console.log(t);alert('病人清單已經貼至console');}"
+			},
+			{
+				"name": "電子白板",
+				"href": "javascript:{open('http://ihisaw.ntuh.gov.tw/WebApplication/EBoard/EBoardMainPage.aspx'+location.search,'EBoardMainPage');}"
+			},
+			{
+				"name": "修正TPR",
+				"href": "javascript: document.querySelectorAll(\"#NTUHWeb1_TPRDrugSvgBox_svgContainer > svg > [onmouseout]\").forEach(function(svg){svg.innerHTML=\"<title>\"+(svg.getAttribute(\"onmouseover\")||svg.getAttribute(\"onmousemove\")).match(/\"(.+)\"/)[1]+\"</title>\"+svg.innerHTML;svg.removeAttribute(\"onmouseover\");svg.removeAttribute(\"onmousemove\");svg.removeAttribute(\"onmouseout\");})",
+				"annotation": "在TPR頁面點擊書籤按鈕，修正chrome沒辦法顯示藥物的錯誤"
+			},
+			{
+				"name": "血糖胰島素整理",
+				"href": "javascript: {if(window.NodeList&&!NodeList.prototype.forEach){NodeList.prototype.forEach=Array.prototype.forEach;}document.querySelectorAll(\"#NTUHWeb1_TPRDrugSvgBox_svgContainer > svg > [onmouseout]\").forEach(function(s){if(s.matches(\"text\")){s.classList.add(\"svg-drug\");s.generic=s.textContent;}else if(s.matches(\"path[stroke=\"red\"]\")){s.classList.add(\"svg-cancel\");}else if(s.matches(\"path[stroke=\"black\"]\")){s.classList.add(\"svg-given\");}else if(s.matches(\"path\")){s.classList.add(\"svg-short-term\");}else if(s.matches(\"line\")){s.classList.add(\"svg-long-term\");}s.setAttribute(\"onmouse\",s.getAttribute(\"onmouseover\")||s.getAttribute(\"onmousemove\"));s.setAttribute(\"title\",s.getAttribute(\"onmouse\").match(/\"(.+)\"/)[1]);s.setAttribute(\"index\",s.getAttribute(\"onmouse\").match(/,([0-9]+))/)[1]);s.innerHTML=\"<title>\"+s.getAttribute(\"title\")+\"</title>\"+s.innerHTML;s.removeAttribute(\"onmouseover\");s.removeAttribute(\"onmousemove\");s.removeAttribute(\"onmouseout\");});function standarizeDate(d){d=d.match(/([0-9]+)/([0-9]+)( |-|$)/);return((d[1].length==1)?(\"0\"+d[1]):d[1])+\"/\"+((d[2].length==1)?(\"0\"+d[2]):d[2]);}let table=[];document.querySelectorAll(\"#NTUHWeb1_TPRDrugSvgBox_svgContainer > svg > text[y=\"12\"]\").forEach(function(t){let d=standarizeDate(t.textContent);table.push({date:d,x:Number(t.getAttribute(\"x\")),sugar:{TID1:[],TID2:[],TID3:[],HS:[]},insulin:{TID1:[],TID2:[],TID3:[],HS:[]}});table[d]=table[table.length-1];});let insulins=[{type:\"L\",name:\"Tresiba\",keyword:\"TRESIBA\",generic:\"Insulin Degludec\",brand:\"Tresiba FlexTouch 300 U/3 mL/pen\"},{type:\"L\",name:\"Levemir\",keyword:\"LEVEMIR\",generic:\"Insulin Detemir\",brand:\"Levemir FlexPen 300 U/3 mL/pen\"},{type:\"L\",name:\"Lantus\",keyword:\"LANTUS\",generic:\"Insulin Glargine\",brand:\"Lantus Solution for Injection (SoloStar),300 U/3 mL/pen\"},{type:\"L\",name:\"Toujeo\",keyword:\"TOUJEO\",generic:\"Insulin Glargine\",brand:\"Toujeo SoloStar Solution for Injection,450 U/1.5 mL/pen\"},{type:\"I\",name:\"NPH\",keyword:\"HUMULIN N\",generic:\"Isophane Insulin Suspension\",brand:\"Humulin N (NPH) 1000 U/10 mL/vial\"},{type:\"R\",name:\"NovoRapid\",keyword:\"NOVORAPID FLEXPEN\",generic:\"Insulin Aspart\",brand:\"NovoRapid FlexPen 300 U/3 mL/pen\"},{type:\"R\",name:\"NovoRapid\",keyword:\"NOVORAPID PENFILL\",generic:\"Insulin Aspart\",brand:\"兒 NovoRapid Penfill 300 U/3 mL/penfill\"},{type:\"R\",name:\"Humalog\",keyword:\"HUMALOG KWIKPEN INJECTION\",generic:\"Insulin Lispro\",brand:\"Humalog KwikPen Injection,100 U/mL,300 U/3 mL/pen\"},{type:\"S\",name:\"RI\",keyword:\"HUMULIN R\",generic:\"Regular Insulin\",brand:\"Humulin R 1000 U/10 m/vial\"},{type:\"IR\",name:\"Humalog 50\",keyword:\"HUMALOG MIX50 KWIKPEN\",generic:\"50% Insulin Lispro and 50% Insulin Lispro Protamine\",brand:\"Humalog Mix50 KwikPen,300 U/3 mL/pen\"},{type:\"IR\",name:\"NovoMix 30\",keyword:\"NOVOMIX 30 FLEXPEN\",generic:\"Insulin Aspart 30% and Insulin Aspart Protamine Susp. 70%\",brand:\"NovoMix 30 FlexPen 300 U/3 mL/pen\"}];function range(value,arry,prop){let i;if(prop){for(i=arry.length-1;i>0&&value<arry[i][prop];i--);return arry[i];}else{for(i=arry.length-1;i>0&&value<arry[i];i--);return i;}}let periods=[{name:\"TID1\",time:400},{name:\"TID2\",time:900},{name:\"TID3\",time:1400},{name:\"HS\",time:1900},];document.querySelectorAll(\"svg > text.svg-drug\").forEach(function(drug){if(drug.textContent.toLowerCase().indexOf(\"insulin\")!=-1){let insulin=drug.getAttribute(\"title\").toUpperCase();for(let inf of insulins){if(insulin.indexOf(inf.keyword)!=-1){insulin=inf;break;}}document.querySelectorAll(\"svg > path.svg-given[index=\"\"+drug.getAttribute(\"index\")+\"\"]\").forEach(function(given){given={date:range(Number(given.getAttribute(\"d\").match(/M ([0-9.]+) /)[1]),table,\"x\").date,time:given.getAttribute(\"title\").replace(/.*(dd)點(dd)分.*/,\"$1$2\"),period:\"\",drug:insulin,dose:Number(given.getAttribute(\"title\").match(/([0-9]+)U/)[1])};given.period=range(given.time,periods,\"time\").name;table[given.date].insulin[given.period].push(given);});}});document.querySelectorAll(\"#BloodSugar_2 li\").forEach(function(li){li={date:standarizeDate(li.getAttribute(\"mytime\")),time:li.getAttribute(\"mytime\").replace(/.+(dd):(dd).+/,\"$1$2\"),period:\"\",value:Number(li.getAttribute(\"myvalue\").replace(\"(STAT)\",\"\"))};li.period=range(li.time,periods,\"time\").name;table[li.date].sugar[li.period].push(li);});let t,r,b,th;t=document.createElement(\"table\");t.classList.add(\"SI-panel\");r=t.createTHead().insertRow();r.innerHTML=\"<th></th><th>前晚睡前<br>Insulin</th><th>早餐前<br>Sugar</th><th>早餐前<br>Insulin</th><th>中餐前<br>Sugar</th><th>中餐前<br>Insulin</th><th>晚餐前<br>Sugar</th><th>晚餐前<br>Insulin</th><th>睡前<br>Sugar</th>\";b=t.createTBody();table.forEach(function(tr,index){r=b.insertRow();r.insertCell().innerText=tr.date;(index>0)?(insertCellFromTable(r,table[index-1].insulin.HS)):r.insertCell().innerHTML=\"\";insertCellFromTable(r,tr.sugar.TID1);insertCellFromTable(r,tr.insulin.TID1);insertCellFromTable(r,tr.sugar.TID2);insertCellFromTable(r,tr.insulin.TID2);insertCellFromTable(r,tr.sugar.TID3);insertCellFromTable(r,tr.insulin.TID3);insertCellFromTable(r,tr.sugar.HS);});function insertCellFromTable(r,os){c=r.insertCell();os.forEach(function(o){if(o.drug){let wrap=document.createElement(\"div\");wrap.innerText=o.dose+\"U\";wrap.title=o.date+\" \"+o.time.replace(/(dd)(dd)/,\"$1:$2\")+\"\r\n\"+o.drug.brand;c.appendChild(wrap);}else{let wrap=document.createElement(\"div\");wrap.innerText=o.value;wrap.title=o.date+\" \"+o.time.replace(/(dd)(dd)/,\"$1:$2\");c.appendChild(wrap);}});}let panelStyle=document.createElement(\"style\");panelStyle.innerText=\"table.SI-panel,table.SI-panel th,table.SI-panel td {border: 1px solid black;border-collapse: collapse;text-align: center;} table.SI-panel td,table.SI-panel th {width: 100px;}\";document.getElementById(\"TableCode\").appendChild(t);document.getElementById(\"TableCode\").appendChild(panelStyle);}",
+				"annotation": "「顯示處方」、勾選「給藥註記」、勾「其他」"
+			},
+			{
+				"name": "急診",
+				"href": "javascript:{open('http://ehisaw.ntuh.gov.tw/WebApplication/Emergency/EmergencyConfirmDiagnosisOrder.aspx','EmergencyConfirmDiagnosisOrder');}"
+			}
+		]
+	}
+]
