@@ -35,22 +35,21 @@
 		開起一個新分頁，新分頁的網址是: <code>http://....../VitalSign_TPR.aspx?</code> 加上 <code>...搜索參數...</code><br>
 		等於手動告訴伺服器我要去這個病人的生命徵象頁面~
 	</p>
-	<p>大部分頁面可以互相跳轉，但因為某些特殊頁面的網址需要的 <code>搜索參數</code> 比較複雜，因此無法正確跳至該頁面，尤其是報告系統、PACS、EMR</p>	
+	<p>大部分頁面可以互相跳轉，但因為某些特殊頁面的網址需要的 <code>搜索參數</code> 比較複雜，因此無法正確跳至該頁面，尤其是報告系統、PACS、EMR</p>
 	
 	<div id="ul-container">
 	</div>
 	
 	<script>
-		var requestURL = 'https://chyhcode.github.io/NTUH-tools/Bookmarklets.json';
+		var requestURL = 'https://chyhcode.github.io/NTUH-tools/bookmarklets.json';
 		var request = new XMLHttpRequest();
+		var bookmarklets;
 		request.open('GET', requestURL);
-		request.responseType = 'json';
+		// request.responseType = 'json';
 		request.send();
 		request.onload = function() {
 			var ulContainer = document.getElementById('ul-container');
-			var bookmarklets = request.response;
-			console.log(bookmarklets);
-			
+			bookmarklets = JSON.parse(request.response);
 			
 			bookmarklets.forEach(function(listGroup){
 				var h3 = document.createElement('h3');
@@ -63,10 +62,9 @@
 					a.innerText = b.name;
 					a.href = b.href;
 					ul.appendChild(document.createElement('li')).appendChild(a);
-				})
+				});
 				ulContainer.appendChild(ul);
 			});
-			
 		}
 	</script>
-</body></html>								
+</body></html>
