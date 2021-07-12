@@ -48,23 +48,25 @@
 		request.send();
 		request.onload = function() {
 			var ulContainer = document.getElementById('ul-container');
-			var Bookmarklets = request.response;
-			console.log(Bookmarklets);
+			var bookmarklets = request.response;
+			console.log(bookmarklets);
 			
-			Bookmarklets.forEach(function(listGroup){
+			/*
+			bookmarklets.forEach(function(listGroup){
 				var h3 = document.createElement('h3');
 				h3.innerText = listGroup.name;
 				ulContainer.appendChild(h3);
 				
 				var ul = document.createElement('ul');
-				listGroup.ul.forEach(function(bookmarklet){
+				listGroup.ul.forEach(function(b){
 					var a = document.createElement('a');
-					a.innerText = bookmarklet.name;
-					a.href = bookmarklet.bookmarklet;
+					a.innerText = b.name;
+					a.href = b.href;
 					ul.appendChild(document.createElement('li')).appendChild(a);
 				})
 				ulContainer.appendChild(ul);
 			});
+			*/
 		}
 	</script>
 </body></html>								
