@@ -1,0 +1,38 @@
+{
+	"ConfirmDiagnosisOrder": [
+		"主",
+		"javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/Ward/ConfirmDiagnosisOrder.aspx' + location.search, 'ConfirmDiagnosisOrder');"
+	],
+	"InsertProgressNoteContent": [
+		"程",
+		"javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/Ward/InsertProgressNoteContent.aspx' + location.search, 'InsertProgressNoteContent' );"
+	],
+	"PatientMedicalRecordListQuery": [
+		"史",
+		"javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/PatientBasicInfoEdit/PatientMedicalRecordListQuery.aspx' + location.search, 'PatientMedicalRecordListQuery' );"
+	],
+	"MedicationHistory": [
+		"藥史",
+		"javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/MedicationHistory/Default.aspx' + location.search, 'MedicationHistory' );"
+	],
+	"ProgressNote": [
+		"程s",
+		"javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/PatientBasicInfoEdit/SimpleInfoShowUsingPlaceHolder.aspx' + location.search.replace(/Func=[A-Za-z]+/,'') + '&Func=ProgressNote', 'ProgressNote');"
+	],
+	"AdmissionNote": [
+		"入摘",
+		"javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/PatientBasicInfoEdit/SimpleInfoShowUsingPlaceHolder.aspx' + location.search.replace(/Func=[A-Za-z]+/,'') + '&Func=AdmissionNote', 'AdmissionNote');"
+	],
+	"OPNoteList": [
+		"術紀",
+		"javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/PatientBasicInfoEdit/SimpleInfoShowUsingPlaceHolder.aspx' + location.search.replace(/Func=[A-Za-z]+/,'') + '&Func=OPNoteList', 'OPNoteList');"
+	],
+	"DischargeSummaryByPersonID": [
+		"出摘s",
+		"javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/PatientBasicInfoEdit/SimpleInfoShowUsingPlaceHolder.aspx' + location.search.replace(/Func=[A-Za-z]+/,'') + '&Func=DischargeSummaryByPersonID', 'DischargeSummaryByPersonID');"
+	],
+	"WinFormPopupMedicalRecord": [
+		"EMR",
+		"javascript: open('http://hisaw.ntuh.gov.tw/WebApplication/Clinics/WinFormPopupMedicalRecord.aspx' + location.search, 'WinFormPopupMedicalRecord' );"
+	]
+}
