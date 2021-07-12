@@ -1,38 +1,38 @@
 [
 	{
 		"name": "主",
-		"bookmarklet": "javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/Ward/ConfirmDiagnosisOrder.aspx' + location.search, 'ConfirmDiagnosisOrder');"
+		"bookmarklet": "javascript:{open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/Ward/ConfirmDiagnosisOrder.aspx'+location.search,'ConfirmDiagnosisOrder');}"
 	},
 	{
 		"name": "程",
-		"bookmarklet": "javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/Ward/InsertProgressNoteContent.aspx' + location.search, 'InsertProgressNoteContent' );"
+		"bookmarklet": "javascript:{open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/Ward/InsertProgressNoteContent.aspx'+location.search,'InsertProgressNoteContent');}"
 	},
 	{
 		"name": "史",
-		"bookmarklet": "javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/PatientBasicInfoEdit/PatientMedicalRecordListQuery.aspx' + location.search, 'PatientMedicalRecordListQuery' );"
+		"bookmarklet": "javascript:{open('http://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/PatientBasicInfoEdit/PatientMedicalRecordListQuery.aspx'+location.search,'PatientMedicalRecordListQuery');}"
 	},
 	{
 		"name": "藥史",
-		"bookmarklet": "javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/MedicationHistory/Default.aspx' + location.search, 'MedicationHistory' );"
+		"bookmarklet": "javascript:{open('http://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/MedicationHistory/Default.aspx'+location.search,'MedicationHistory');}"
 	},
 	{
 		"name": "程s",
-		"bookmarklet": "javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/PatientBasicInfoEdit/SimpleInfoShowUsingPlaceHolder.aspx' + location.search.replace(/Func=[A-Za-z]+/,'') + '&Func=ProgressNote', 'ProgressNote');"
+		"bookmarklet": "javascript:{open('http://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/PatientBasicInfoEdit/SimpleInfoShowUsingPlaceHolder.aspx'+location.search.replace(/Func=[A-Za-z]+/,'')+'&Func=ProgressNote','ProgressNote');}"
 	},
 	{
 		"name": "入摘",
-		"bookmarklet": "javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/PatientBasicInfoEdit/SimpleInfoShowUsingPlaceHolder.aspx' + location.search.replace(/Func=[A-Za-z]+/,'') + '&Func=AdmissionNote', 'AdmissionNote');"
+		"bookmarklet": "javascript:{open('http://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/PatientBasicInfoEdit/SimpleInfoShowUsingPlaceHolder.aspx'+location.search.replace(/Func=[A-Za-z]+/,'')+'&Func=AdmissionNote','AdmissionNote');}"
 	},
 	{
 		"name": "術紀",
-		"bookmarklet": "javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/PatientBasicInfoEdit/SimpleInfoShowUsingPlaceHolder.aspx' + location.search.replace(/Func=[A-Za-z]+/,'') + '&Func=OPNoteList', 'OPNoteList');"
+		"bookmarklet": "javascript:{open('http://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/PatientBasicInfoEdit/SimpleInfoShowUsingPlaceHolder.aspx'+location.search.replace(/Func=[A-Za-z]+/,'')+'&Func=OPNoteList','OPNoteList');}"
 	},
 	{
 		"name": "出摘s",
-		"bookmarklet": "javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/PatientBasicInfoEdit/SimpleInfoShowUsingPlaceHolder.aspx' + location.search.replace(/Func=[A-Za-z]+/,'') + '&Func=DischargeSummaryByPersonID', 'DischargeSummaryByPersonID');"
+		"bookmarklet": "javascript:{open('http://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/PatientBasicInfoEdit/SimpleInfoShowUsingPlaceHolder.aspx'+location.search.replace(/Func=[A-Za-z]+/,'')+'&Func=DischargeSummaryByPersonID','DischargeSummaryByPersonID');}"
 	},
 	{
 		"name": "EMR",
-		"bookmarklet": "javascript: open('http://hisaw.ntuh.gov.tw/WebApplication/Clinics/WinFormPopupMedicalRecord.aspx' + location.search, 'WinFormPopupMedicalRecord' );"
+		"bookmarklet": "javascript:{open('http://hisaw.ntuh.gov.tw/WebApplication/Clinics/WinFormPopupMedicalRecord.aspx'+location.search,'WinFormPopupMedicalRecord');}"
 	}
 ]
