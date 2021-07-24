@@ -235,6 +235,10 @@
 				"annotation": "「顯示處方」、勾選「給藥註記」、勾「其他」"
 			},
 			{
+				"name": "簡訊",
+				"href": "javascript:{open('https://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/CriticalVentilator/MessageSend.aspx'+location.search.replace(/&PersonID=[A-Z][0-9]{9}/,''));}"
+			},
+			{
 				"name": "急診",
 				"href": "javascript:{open('http://ehisaw.ntuh.gov.tw/WebApplication/Emergency/EmergencyConfirmDiagnosisOrder.aspx','EmergencyConfirmDiagnosisOrder');}"
 			}
