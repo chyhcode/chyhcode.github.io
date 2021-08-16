@@ -117,6 +117,10 @@
 				"href": "javascript:{open('http://ihisaw.ntuh.gov.tw/WebApplication/ElectronicMedicalReportViewer/MedicalReportContent.aspx'+location.search,'MedicalReportContent');}"
 			},
 			{
+				"name": "綠單",
+				"href": "javascript:(function(){var d,fs,t,i,j,k;d=document.getElementById('Reportifrm');if(d){d.style.height='90vh';d=d.contentDocument;} else{d=document;} fs=d.querySelectorAll('fieldset.GroupHead');for(k=0;k<fs.length;k++){t=fs[k].querySelectorAll('table.GreenSheet');for(var i=1;i<t.length;i++){for(var j=0;j<t[i].rows.length;j++){if(j!=1){t[i].rows[j].removeChild(t[i].rows[j].firstElementChild)} t[0].rows[j].innerHTML+=t[i].rows[j].innerHTML;} fs[k].removeChild(t[i]);} fs[k].appendChild(d.createElement('div')).appendChild(t[0]);} if(!d.getElementById('GreenSheetOverflow')){s=d.createElement('style');s.id='GreenSheetOverflow';s.innerText='fieldset.GroupHead {min-inline-size: unset;} fieldset.GroupHead > div {overflow-x: auto;} table.GreenSheetTitle, table.GreenSheet {table-layout: fixed; margin: 0} table.GreenSheet th {min-width: 87px;} table.GreenSheet tbody tr > :first-child, table.GreenSheet .LEFTTOP {min-width: 150px; position: sticky; left: 0}';d.body.appendChild(s);} d=d.getElementById('rReportTab_lsvReportBody_ctrl0_ctl00_ReportTitle1_contentTemplatePlaceholder');if(d)d.style.border='none';})();"
+			},
+			{
 				"name": "PACS",
 				"href": "javascript:{open('http://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/PatientBasicInfoEdit/PACSImageShowList2.aspx'+location.search,'PACSImageShowList2');}"
 			},
