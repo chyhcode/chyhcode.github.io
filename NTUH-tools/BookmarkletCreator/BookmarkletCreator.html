@@ -116,10 +116,9 @@
 		});
 
 		function clearCodeConfirm() {
-			if (q('#bookmarkletName').value == '' && q('#bookmarkletCode').value == '')
+			if (q('#bookmarkletCode').value == '')
 				return true;
 			if (confirm('此動作將清除現有名稱及程式碼，是否執行此動作？')) {
-				q('#bookmarkletName').value = '';
 				q('#bookmarkletCode').value = '';
 				return true;
 			}
