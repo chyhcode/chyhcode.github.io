@@ -6,6 +6,7 @@
     <title>Short URL App</title>
     <script>
         var s = document.createElement('script');
+        document.body.appendChild(s);
         s.onload = function() {
             // 從 routes 中找到該關鍵字所對應到的網址
             var url = routes[location.pathname.replace('/', '')];
