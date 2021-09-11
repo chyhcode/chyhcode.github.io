@@ -12,7 +12,6 @@ var routes = {
 }
 
 // 從 routes 中找到該關鍵字所對應到的網址
-var url = routes[location.pathname.replace('/')];
+var url = routes[location.pathname.replace('/','')];
 // 若該關鍵字有設定對應的網址，則轉跳到該網址中，若沒有則回到首頁
-alert(url);
 location.href = url ? url : 'https://chyhcode.github.io';
