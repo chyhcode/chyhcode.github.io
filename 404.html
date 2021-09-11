@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>Short URL App</title>
-    <script src="routes.js"></script>
+    <script>
+        var s = document.createElement('script');
+        s.onload = function() {
+            // 從 routes 中找到該關鍵字所對應到的網址
+            var url = routes[location.pathname.replace('/', '')];
+            // 若該關鍵字有設定對應的網址，則轉跳到該網址中，若沒有則回到首頁
+            location.href = url ? url : 'https://chyhcode.github.io';
+        };
+        s.src = 'routes.js';
+    </script>
 </head>
+
 </html>
-
-
-
