@@ -66,15 +66,19 @@
 		<div class="card card-body mt-3">
 			<h4 class="card-title">第二步: 生成書籤小工具</h4>
 			<div>
-				<button type="button" class="btn btn-primary" id="btnBookmarkletFormate">生成</button>
-				<span class="ml-1">生成書籤小工具將自動清除換行及空白鍵</span>
+				<button type="button" class="btn btn-primary" id="btnGenerateWithSpace">生成並"保留"空白字元</button>
+				<span class="ml-1">清除換行但保留空白鍵，可最大程度保證程式碼正確 (建議)</span>
+			</div>
+			<div class="mt-2">
+				<button type="button" class="btn btn-primary" id="btnGenerateWithoutSpace">生成並"移除"空白字元</button>
+				<span class="ml-1">清除換行及空白鍵，體積較小但可能過度移除空白字元</span>
 			</div>
 		</div>
 		<div class="card card-body mt-3">
 			<h4 class="card-title">第三步: 拖曳書籤小工具至書籤列</h4>
 			<div>
 				<a href="javascript: void();" class="btn btn-secondary" id="bookmarklet">Bookmarklet</a>
-				<span class="ml-1">&lt;--我是書籤小工具</span>
+				<span class="ml-1">&lt;--我是書籤小工具，拖曳我至書籤列以保存</span>
 			</div>
 			<pre id="demo" class="alert alert-success mt-3" style="display: none;"></pre>
 		</div>
