@@ -26,7 +26,8 @@
 	</style>
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/gh/chyhcode/chyhcode.github.io@main/NTUH-tools/bookmarklets.js"></script>
+	<!-- <script src="https://cdn.jsdelivr.net/gh/chyhcode/chyhcode.github.io@main/NTUH-tools/bookmarklets.js"></script> -->
+	<script src="../bookmarklets.js"></script>
 </head>
 
 <body>
@@ -40,21 +41,28 @@
 			</div>
 			<div class="collapse navbar-collapse" id="collapsibleNavbar">
 				<div class="navbar-nav nav">
-					<a class="nav-item nav-link active" href="#page1" id="page1-tab" data-toggle="tab" role="tab" aria-controls="page1" aria-selected="true">簡介</a>
-					<a class="nav-item nav-link" href="#page2" id="page2-tab" data-toggle="tab" role="tab" aria-controls="page2" aria-selected="false">跳轉書籤小工具</a>
-					<a class="nav-item nav-link" href="#page3" id="page3-tab" data-toggle="tab" role="tab" aria-controls="page3" aria-selected="false">特殊書籤小工具</a>
+					<a class="nav-item nav-link active" href="#pageIntroduction" id="pageIntroduction-tab" data-toggle="tab" role="tab" aria-controls="pageIntroduction" aria-selected="true">簡介</a>
+					<a class="nav-item nav-link" href="#pageOpenLinkBmkl" id="pageOpenLinkBmkl-tab" data-toggle="tab" role="tab" aria-controls="pageOpenLinkBmkl" aria-selected="false">跳轉書籤小工具</a>
+					<a class="nav-item nav-link" href="#pageSpecialBmkl" id="pageSpecialBmkl-tab" data-toggle="tab" role="tab" aria-controls="pageSpecialBmkl" aria-selected="false">特殊書籤小工具</a>
 					<a class="nav-item nav-link" href="#pageCustomize" id="pageCustomize-tab" data-toggle="tab" role="tab" aria-controls="pageCustomize" aria-selected="false">自定義書籤小工具</a>
 				</div>
 			</div>
 		</div>
 	</nav>
 	<div class="container-lg">
-		<div class="tab-content" id="myTabContent">
-			<div class="tab-pane fade show active" id="page1" role="tabpanel" aria-labelledby="page1-tab">
+		<div class="tab-content">
+			<div class="tab-pane fade show active" id="pageIntroduction" role="tabpanel" aria-labelledby="pageIntroduction-tab">
+				<h1 class="pt-4 text-center">簡介</h1>
 				<p>本頁面縮網址: <a href="https://chyhcode.github.io/b">https://chyhcode.github.io/b</a></p>
 			</div>
-			<div class="tab-pane fade" id="page2" role="tabpanel" aria-labelledby="page2-tab">page2</div>
-			<div class="tab-pane fade" id="page3" role="tabpanel" aria-labelledby="page3-tab">page3</div>
+			<div class="tab-pane fade" id="pageOpenLinkBmkl" role="tabpanel" aria-labelledby="pageOpenLinkBmkl-tab">
+				<h1 class="pt-4 text-center">跳轉書籤小工具</h1>
+				<ul id="listOpenLinkBmkl"></ul>
+			</div>
+			<div class="tab-pane fade" id="pageSpecialBmkl" role="tabpanel" aria-labelledby="pageSpecialBmkl-tab">
+				<h1 class="pt-4 text-center">特殊書籤小工具</h1>
+				<ul id="listSpecialBmkl"></ul>
+			</div>
 			<div class="tab-pane fade" id="pageCustomize" role="tabpanel" aria-labelledby="pageCustomize-tab">
 				<h1 class="pt-4 text-center">自定義書籤小工具</h1>
 				<div class="card card-body mt-3">
@@ -78,7 +86,7 @@
 						<button type="button" class="btn btn-danger" id="btnClearCode">清除全部</button>
 					</div>
 					<div class="form-group mt-3">
-						<label for="option">模板選項</label>
+						<label for="templateOption">模板選項</label>
 						<div class="card card-body" id="templateOption"></div>
 					</div>
 				</div>
@@ -102,95 +110,131 @@
 					<pre id="demo" class="alert alert-success mt-3" style="display: none;"></pre>
 				</div>
 			</div>
-			<script>
-				var code;
-				function q(s) {
-					return document.querySelector(s)
-				}
-				function importOption(ele) {
-					/*{
-						name: 'ConfirmDiagnosisOrder',
-						title: '主',
-						description: '',
-						openWin: 0,
-						func: function() {
-							open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/Ward/ConfirmDiagnosisOrder.aspx' + location.search, 'ConfirmDiagnosisOrder');
-						}
-					}*/
-					var unit = document.createElement('div'),
-						label = document.createElement('label'),
-						checkbox = document.createElement('input'),
-						a = document.createElement('a');
-					unit.className = 'form-check';
-					label.className = 'form-check-label';
-					checkbox.className = 'form-check-input';
-					checkbox.type = 'checkbox';
-					// checkbox.id = ele.name;
-					checkbox.checked = ele.CommonUsed;
-					checkbox.funcString = simpleStringify(ele.func);
-					a.innerText = ele.title;
-					a.href = bookmarkletify(checkbox.funcString);
-
-					label.appendChild(checkbox);
-					label.appendChild(a);
-					if (ele.description)
-						label.appendChild(document.createTextNode(' (' + ele.description + ')'));
-					q('#templateOption').appendChild(unit).appendChild(label);
-				}
-				function clearCodeConfirm() {
-					if (q('#bookmarkletCode').value == '')
-						return true;
-					if (confirm('此動作將清除現有名稱及程式碼，是否執行此動作？')) {
-						q('#bookmarkletCode').value = '';
-						return true;
-					}
-					else return false;
-				}
-				function btnOpenLinkTemplateClicked() {
-					if (clearCodeConfirm()) {
-						code = '';
-						document.querySelectorAll('#option input:checked').forEach(function(checkbox) {
-							code += checkbox.funcString + '\n';
-						});
-						q('#bookmarkletCode').value = code;
-					}
-				}
-				function btnOpenWardTemplateClicked() {
-					if (clearCodeConfirm()) {
-						code = "if (location.pathname == '/WebApplication/InPatient/Ward/OpenWard.aspx') {\n  if (window.NodeList && !NodeList.prototype.forEach) { NodeList.prototype.forEach = Array.prototype.forEach; }\n  document.querySelectorAll('.tableText, .tableText2').forEach(function(tr) {\n    tr.cells[7].searchParams = tr.cells[8].firstElementChild.firstElementChild.getAttribute('onclick').match(/(\\\\?.+?)'/)[1];\n    tr.cells[7].onclick = function() {\n";
-						document.querySelectorAll('#option input:checked').forEach(function(checkbox) {
-							code += "      " + checkbox.funcString.replace('location.search', 'this.searchParams') + '\n';
-						});
-						code += "    };\n  });\n  alert('\"病房首頁快速連結\"已建立, 點選病人\"住院日期\"開啟相關頁面!');\n}\nelse {\n  alert('本功能僅使用於病房首頁!');\n  open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/Ward/OpenWard.aspx' + location.search);\n}";
-						q('#bookmarkletCode').value = code;
-						q('#bookmarkletName').value = '病房首頁快速連結';
-					}
-				}
-				function btnGenerateClicked() {
-					if (code = q('#bookmarkletName').value.trim()) q('#bookmarklet').innerText = code;
-					q('#bookmarklet').classList.remove('btn-secondary');
-					q('#bookmarklet').classList.add('btn-success');
-
-					code = q('#bookmarkletCode').value.replace(/\s+/g, ' ').trim().replace(/;?$/, ';');
-					if (this.id == 'btnGenerateWithoutSpace') {
-						code = code.replace(/ ?(;|\+|\{|\}|\(|\)|=) ?/g, '$1');
-					}
-					q('#bookmarklet').href = q('#demo').innerText = 'javascript: ' + code + ' undefined;';
-					q('#demo').style.display = 'block';
-					q('#demo').scrollIntoView(true);
-				}
-
-				chyhObject.forEach(importOption);
-				q('#btnOpenLinkTemplate').onclick = btnOpenLinkTemplateClicked;
-				q('#btnOpenWardTemplate').onclick = btnOpenWardTemplateClicked;
-				q('#btnClearCode').onclick = clearCodeConfirm;
-				btnOpenWardTemplateClicked();
-
-				q('#btnGenerateWithSpace').onclick = btnGenerateClicked;
-				q('#btnGenerateWithoutSpace').onclick = btnGenerateClicked;
-			</script>
 		</div>
 	</div>
+	<script>
+		var code;
+
+		function q(s) {
+			return document.querySelector(s)
+		}
+
+		function generateOption(ele) {
+			/*{
+				name: 'ConfirmDiagnosisOrder',
+				title: '主',
+				description: '',
+				openWin: 0,
+				func: function() {
+					open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/Ward/ConfirmDiagnosisOrder.aspx' + location.search, 'ConfirmDiagnosisOrder');
+				}
+			}*/
+			var unit = document.createElement('div'),
+				label = document.createElement('label'),
+				checkbox = document.createElement('input'),
+				a = document.createElement('a');
+			unit.className = 'form-check';
+			label.className = 'form-check-label';
+			checkbox.className = 'form-check-input';
+			checkbox.type = 'checkbox';
+			// checkbox.id = ele.name;
+			checkbox.checked = ele.CommonUsed;
+			checkbox.funcString = simpleStringify(ele.func);
+			a.innerText = ele.title;
+			a.href = bookmarkletify(checkbox.funcString);
+
+			label.appendChild(checkbox);
+			label.appendChild(a);
+			if (ele.description)
+				label.appendChild(document.createTextNode(' (' + ele.description + ')'));
+			q('#templateOption').appendChild(unit).appendChild(label);
+		}
+
+		function clearCodeConfirm() {
+			if (q('#bookmarkletCode').value == '')
+				return true;
+			if (confirm('此動作將清除現有名稱及程式碼，是否執行此動作？')) {
+				q('#bookmarkletCode').value = '';
+				return true;
+			}
+			else return false;
+		}
+
+		function btnOpenLinkTemplateClicked() {
+			if (clearCodeConfirm()) {
+				code = '';
+				document.querySelectorAll('#templateOption input:checked').forEach(function(checkbox) {
+					code += checkbox.funcString + '\n';
+				});
+				q('#bookmarkletCode').value = code;
+			}
+		}
+
+		function btnOpenWardTemplateClicked() {
+			if (clearCodeConfirm()) {
+				code = "if (location.pathname == '/WebApplication/InPatient/Ward/OpenWard.aspx') {\n  if (window.NodeList && !NodeList.prototype.forEach) { NodeList.prototype.forEach = Array.prototype.forEach; }\n  document.querySelectorAll('.tableText, .tableText2').forEach(function(tr) {\n    tr.cells[7].searchParams = tr.cells[8].firstElementChild.firstElementChild.getAttribute('onclick').match(/(\\\\?.+?)'/)[1];\n    tr.cells[7].onclick = function() {\n";
+				document.querySelectorAll('#templateOption input:checked').forEach(function(checkbox) {
+					code += "      " + checkbox.funcString.replace('location.search', 'this.searchParams') + '\n';
+				});
+				code += "    };\n  });\n  alert('\"病房首頁快速連結\"已建立, 點選病人\"住院日期\"開啟相關頁面!');\n}\nelse {\n  alert('本功能僅使用於病房首頁!');\n  open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/Ward/OpenWard.aspx' + location.search);\n}";
+				q('#bookmarkletCode').value = code;
+				q('#bookmarkletName').value = '病房首頁快速連結';
+			}
+		}
+
+		function btnGenerateClicked() {
+			if (code = q('#bookmarkletName').value.trim()) q('#bookmarklet').innerText = code;
+			q('#bookmarklet').classList.remove('btn-secondary');
+			q('#bookmarklet').classList.add('btn-success');
+
+			code = q('#bookmarkletCode').value.replace(/\s+/g, ' ').trim().replace(/;?$/, ';');
+			if (this.id == 'btnGenerateWithoutSpace') {
+				code = code.replace(/ ?(;|\+|\{|\}|\(|\)|=) ?/g, '$1');
+			}
+			q('#bookmarklet').href = q('#demo').innerText = 'javascript: ' + code + ' undefined;';
+			q('#demo').style.display = 'block';
+			q('#demo').scrollIntoView(true);
+		}
+
+		function generateOpenLinkBmkl(ele) {
+			var li = document.createElement('li'),
+				a = document.createElement('a');
+			a.innerText = ele.title;
+			a.href = 'javascript: ' + simpleStringify(ele.func) + ' undefined;';
+			q('#listOpenLinkBmkl').appendChild(li).appendChild(a);
+			if (ele.description)
+				li.appendChild(document.createTextNode(' (' + ele.description + ')'));
+		}
+
+		function generateSpecialBmkl() {
+			q('#listSpecialBmkl');
+			/*{
+				name: 'ConfirmDiagnosisOrder',
+				title: '主',
+				description: '',
+				openWin: 0,
+				func: function() {
+					open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/Ward/ConfirmDiagnosisOrder.aspx' + location.search, 'ConfirmDiagnosisOrder');
+				}
+			}*/
+
+		}
+
+		// pageIntroduction
+		// pageOpenLinkBmkl
+		bookmarklet.openLink.forEach(generateOpenLinkBmkl);
+		// pageSpecialBmkl
+		bookmarklet.special.forEach(generateSpecialBmkl);
+
+		// pageCustomize
+		bookmarklet.openLink.forEach(generateOption);
+		q('#btnOpenLinkTemplate').onclick = btnOpenLinkTemplateClicked;
+		q('#btnOpenWardTemplate').onclick = btnOpenWardTemplateClicked;
+		q('#btnClearCode').onclick = clearCodeConfirm;
+		btnOpenWardTemplateClicked();
+		q('#btnGenerateWithSpace').onclick = btnGenerateClicked;
+		q('#btnGenerateWithoutSpace').onclick = btnGenerateClicked;
+	</script>
 </body>
 
 </html>
