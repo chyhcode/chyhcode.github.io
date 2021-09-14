@@ -17,11 +17,11 @@
 			height: 400px;"
 		}
 		pre {
-			white-space: normal;
+			white-space: pre;
 		}
 		textarea {
 			overflow-x: scroll; 
-			white-space: nowrap;
+			white-space: pre;
 		}
 	</style>
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -33,7 +33,7 @@
 <body>
 	<nav class="navbar navbar-expand-md sticky-top navbar-dark bg-dark">
 		<div class="container-lg">
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" aria-controls="collapsibleNavbar" aria-expanded="false" aria-label="Toggle navigation">
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="navbar-expand">
@@ -41,29 +41,46 @@
 			</div>
 			<div class="collapse navbar-collapse" id="collapsibleNavbar">
 				<div class="navbar-nav nav">
-					<a class="nav-item nav-link active" href="#pageIntroduction" id="pageIntroduction-tab" data-toggle="tab" role="tab" aria-controls="pageIntroduction" aria-selected="true">簡介</a>
-					<a class="nav-item nav-link" href="#pageOpenLinkBmkl" id="pageOpenLinkBmkl-tab" data-toggle="tab" role="tab" aria-controls="pageOpenLinkBmkl" aria-selected="false">跳轉書籤小工具</a>
-					<a class="nav-item nav-link" href="#pageSpecialBmkl" id="pageSpecialBmkl-tab" data-toggle="tab" role="tab" aria-controls="pageSpecialBmkl" aria-selected="false">特殊書籤小工具</a>
-					<a class="nav-item nav-link" href="#pageCustomize" id="pageCustomize-tab" data-toggle="tab" role="tab" aria-controls="pageCustomize" aria-selected="false">自定義書籤小工具</a>
+					<a class="nav-item nav-link" href="#pageIntroduction" id="pageIntroduction-tab" data-toggle="tab" role="tab">簡介</a>
+					<a class="nav-item nav-link" href="#pageOpenLinkBmkl" id="pageOpenLinkBmkl-tab" data-toggle="tab" role="tab">跳轉書籤小工具</a>
+					<a class="nav-item nav-link active" href="#pageSpecialBmkl" id="pageSpecialBmkl-tab" data-toggle="tab" role="tab">特殊書籤小工具</a>
+					<a class="nav-item nav-link" href="#pageCustomize" id="pageCustomize-tab" data-toggle="tab" role="tab">自定義書籤小工具</a>
 				</div>
 			</div>
 		</div>
 	</nav>
 	<div class="container-lg">
+		<div class="alert alert-warning text-center" role="alert">
+			建議在書籤列新增一個"portal小工具"資料夾，避免被當雜物刪掉。<br>
+			也建議在資料夾內放上本站縮網址讓更多人可以用到 <a href="https://chyhcode.github.io/b">https://chyhcode.github.io/b</a><br>
+			有任何建議歡迎 Email 給我: chyhcode@gmail.com
+		</div>
 		<div class="tab-content">
-			<div class="tab-pane fade show active" id="pageIntroduction" role="tabpanel" aria-labelledby="pageIntroduction-tab">
+			<div class="tab-pane fade" id="pageIntroduction" role="tabpanel">
 				<h1 class="pt-4 text-center">簡介</h1>
-				<p>本頁面縮網址: <a href="https://chyhcode.github.io/b">https://chyhcode.github.io/b</a></p>
+				<p>還沒完成啦</p>
+				<p>請參考 <a target="_blank" href="https://blog.pulipuli.info/2018/12/jquery-load-jquery-from-bookmark.html#postcatajquery-load-jquery-from-bookmark.html0_anchor1">布丁布丁吃什麼？-書籤小工具產生器</a> </p>
 			</div>
-			<div class="tab-pane fade" id="pageOpenLinkBmkl" role="tabpanel" aria-labelledby="pageOpenLinkBmkl-tab">
+			<div class="tab-pane fade" id="pageOpenLinkBmkl" role="tabpanel">
 				<h1 class="pt-4 text-center">跳轉書籤小工具</h1>
 				<ul id="listOpenLinkBmkl"></ul>
 			</div>
-			<div class="tab-pane fade" id="pageSpecialBmkl" role="tabpanel" aria-labelledby="pageSpecialBmkl-tab">
+			<div class="tab-pane fade show active" id="pageSpecialBmkl" role="tabpanel">
 				<h1 class="pt-4 text-center">特殊書籤小工具</h1>
-				<ul id="listSpecialBmkl"></ul>
+				<!-- 
+				<div class="card card-body mt-3">
+					<div>
+						<a class="btn btn-success" href="ele.funcStr">ele.title</a>
+						<a class="btn btn-secondary ml-1" data-toggle="collapse" href="#codeEleName">顯示程式碼</a>
+					</div>
+					<p class="mt-3">ele.description</p>
+					<div class="collapse" id="codeEleName">
+						<pre class="alert alert-success">ele.func</pre>
+					</div>
+				</div>
+				-->
 			</div>
-			<div class="tab-pane fade" id="pageCustomize" role="tabpanel" aria-labelledby="pageCustomize-tab">
+			<div class="tab-pane fade" id="pageCustomize" role="tabpanel">
 				<h1 class="pt-4 text-center">自定義書籤小工具</h1>
 				<div class="card card-body mt-3">
 					<h4 class="card-title">第一步: 名稱及程式碼</h4>
@@ -113,10 +130,17 @@
 		</div>
 	</div>
 	<script>
+		if (window.NodeList && !NodeList.prototype.forEach) {
+			NodeList.prototype.forEach = Array.prototype.forEach;
+		}
 		var code;
 
 		function q(s) {
-			return document.querySelector(s)
+			return document.querySelector(s);
+		}
+
+		function create(tag) {
+			return document.createElement(tag);
 		}
 
 		function generateOption(ele) {
@@ -124,21 +148,21 @@
 				name: 'ConfirmDiagnosisOrder',
 				title: '主',
 				description: '',
-				openWin: 0,
+				CommonUsed: 0,
 				func: function() {
 					open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/Ward/ConfirmDiagnosisOrder.aspx' + location.search, 'ConfirmDiagnosisOrder');
-				}
+				},
 			}*/
-			var unit = document.createElement('div'),
-				label = document.createElement('label'),
-				checkbox = document.createElement('input'),
-				a = document.createElement('a');
+			var unit = create('div'),
+				label = create('label'),
+				checkbox = create('input'),
+				a = create('a');
 			unit.className = 'form-check';
 			label.className = 'form-check-label';
 			checkbox.className = 'form-check-input';
 			checkbox.type = 'checkbox';
 			// checkbox.id = ele.name;
-			checkbox.checked = ele.CommonUsed;
+			checkbox.checked = (ele.CommonUsed > 1);
 			checkbox.funcString = simpleStringify(ele.func);
 			a.innerText = ele.title;
 			a.href = bookmarkletify(checkbox.funcString);
@@ -197,8 +221,8 @@
 		}
 
 		function generateOpenLinkBmkl(ele) {
-			var li = document.createElement('li'),
-				a = document.createElement('a');
+			var li = create('li'),
+				a = create('a');
 			a.innerText = ele.title;
 			a.href = 'javascript: ' + simpleStringify(ele.func) + ' undefined;';
 			q('#listOpenLinkBmkl').appendChild(li).appendChild(a);
@@ -206,21 +230,46 @@
 				li.appendChild(document.createTextNode(' (' + ele.description + ')'));
 		}
 
-		function generateSpecialBmkl() {
-			q('#listSpecialBmkl');
-			/*{
-				name: 'ConfirmDiagnosisOrder',
-				title: '主',
-				description: '',
-				openWin: 0,
-				func: function() {
-					open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/Ward/ConfirmDiagnosisOrder.aspx' + location.search, 'ConfirmDiagnosisOrder');
-				}
-			}*/
+		function generateSpecialBmkl(ele) {
+			var card = create('div'),
+				wrap = create('div'),
+				bmkl = create('a'),
+				tgl = create('a'),
+				p = create('p'),
+				clps = create('div'),
+				pre = create('pre');
 
+			card.className = 'card card-body mt-3';
+
+			bmkl.className = 'btn btn-success';
+			bmkl.innerText = ele.title;
+			bmkl.href = ele.funcStr;
+			card.appendChild(wrap).appendChild(bmkl)
+
+			tgl.className = 'btn btn-secondary ml-1';
+			tgl.href = '#code' + ele.name;
+			tgl.setAttribute('data-toggle', 'collapse');
+			tgl.innerText = '顯示程式碼';
+			wrap.appendChild(tgl);
+
+			p.className = 'mt-3';
+			p.innerText = ele.description;
+			card.appendChild(p);
+
+			clps.className = 'collapse';
+			clps.id = 'code' + ele.name;
+			pre.className = 'alert alert-success';
+			pre.innerText = ele.func.toString()
+				.replace(/^function\(\) \{\r\n\t\t\t/, '')
+				.replace(/\t\t}$/, '')
+				.replace(/\r\n\t\t\t/g, '\r\n')
+				.replace(/\t/g, '  ');
+
+			q('#pageSpecialBmkl').appendChild(card).appendChild(clps).appendChild(pre);
 		}
 
 		// pageIntroduction
+
 		// pageOpenLinkBmkl
 		bookmarklet.openLink.forEach(generateOpenLinkBmkl);
 		// pageSpecialBmkl
