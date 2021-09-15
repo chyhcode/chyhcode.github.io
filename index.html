@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html><head>
+<html>
+
+<head>
 	<title>chyhcode.github.io</title>
 	<meta charset="UTF-8">
 	<!-- Bootstrap 4 -->
@@ -7,10 +9,16 @@
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 	<style>
-		a {display: block;}
-		td {width: 20%;}
+		a {
+			display: block;
+		}
+
+		td {
+			width: 20%;
+		}
 	</style>
 </head>
+
 <body class="container-xl">
 	<h1>使用方式</h1>
 	<h3>IE</h3>
@@ -36,10 +44,8 @@
 		等於手動告訴伺服器我要去這個病人的生命徵象頁面~
 	</p>
 	<p>大部分頁面可以互相跳轉，但因為某些特殊頁面的網址需要的 <code>搜索參數</code> 比較複雜，因此無法正確跳至該頁面，尤其是報告系統、PACS、EMR</p>
-	
 	<div id="ul-container">
 	</div>
-	
 	<script>
 		var requestURL = 'https://chyhcode.github.io/NTUH-tools/bookmarklets.json';
 		var request = new XMLHttpRequest();
@@ -50,14 +56,14 @@
 		request.onload = function() {
 			var ulContainer = document.getElementById('ul-container');
 			bookmarklets = JSON.parse(request.response);
-			
-			bookmarklets.forEach(function(listGroup){
+
+			bookmarklets.forEach(function(listGroup) {
 				var h3 = document.createElement('h3');
 				h3.innerText = listGroup.name;
 				ulContainer.appendChild(h3);
-				
+
 				var ul = document.createElement('ul');
-				listGroup.ul.forEach(function(b){
+				listGroup.ul.forEach(function(b) {
 					var a = document.createElement('a');
 					a.innerText = b.name;
 					a.href = b.href;
@@ -67,4 +73,6 @@
 			});
 		}
 	</script>
-</body></html>
+</body>
+
+</html>
