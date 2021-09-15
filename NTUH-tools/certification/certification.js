@@ -26,7 +26,8 @@ else if (document.getElementById('NTUHWeb1_InstructionSetItem')) {
 		a.href = 'javascript: document.getElementById(\"NTUHWeb1_InstructionSetItem\").value += \"' + t + '\"; undefined;';
 		wrap.innerText = '';
 		wrap.bmklet = true;
-		return wrap.appendChild(a);
+		wrap.appendChild(a);
+		return wrap;
 	}
 
 	var WDtxt = ['至本院一般病房住院，', '轉至一般病房住院，', '轉至加護病房，', '轉至一般病房，'],
@@ -34,12 +35,12 @@ else if (document.getElementById('NTUHWeb1_InstructionSetItem')) {
 	ref && !ref.bmklet && createLink(ref, dateStr(ref.innerText, true) + '至本院急診就診並留觀待床，');
 
 	qFor('#NTUHWeb1_dgLogPatTransferBed [class^=\"tableText\"] td:nth-child(3)', function(td) {
-		!td.bmklet && createLink(td, dateStr(td.innerText));
+		!td.bmklet && createLink(td, dateStr(td.innerText.replace(/\./g, '/')));
 	});
 
 	ref = new Date();
 	qFor('#NTUHWeb1_dgOpScheduleData tr[class^=\"tableText\"] td:nth-child(1)', function(td) {
-		!td.bmklet && createLink(td, dateStr(td.innerText.length == 5 ? (ref.getFullYear() + '/' + td.innerText) : td.innerText) + '接受[術式]，');
+		!td.bmklet && createLink(td, dateStr(td.innerText.length <= 10 ? (ref.getFullYear() + '/' + td.innerText) : td.innerText) + '接受[術式]，');
 	});
 
 	qFor('[id$=\"lblChartNo\"]', function(a) {
@@ -50,13 +51,18 @@ else if (document.getElementById('NTUHWeb1_InstructionSetItem')) {
 	ref.setDate(ref.getDate() + 1);
 	WDtxt.push(dateStr(ref) + '出院，出院後宜持續門診追蹤治療。');
 	WDtxt.forEach(function(t) {
-		document.getElementById('NTUHWeb1_dgLogPatTransferBed').parentNode.appendChild(createLink(document.createElement('div'), t).parentNode);
+		document.getElementById('NTUHWeb1_fieldsetLogPatTransferBed').appendChild(createLink(document.createElement('div'), t));
 	});
 
 	document.getElementById('NTUHWeb1_InstructionSetItem').value = '病患因上述疾病，';
 	alert('診斷書小工具已開啟!');
 }
 else alert('此畫面非診斷書開立畫面!');
+
+// ER 2021/08/28 21:05
+// WD 2021.08.29 02:05:21
+// OP 2021/08/29
+// OP 08/29
 
 
 // 病患因上述疾病，
