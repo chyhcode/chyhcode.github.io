@@ -1,4 +1,4 @@
-// https://cdn.jsdelivr.net/gh/chyhcode/chyhcode.github.io@main/NTUH-tools/bookmarklets.js
+// https://cdn.jsdelivr.net/gh/chyhcode/chyhcode.github.io@main/ntuh-tools/bookmarklet/bookmarklets.js
 var bookmarklet = {
 	openLink: [{
 		name: 'ConfirmDiagnosisOrder',
