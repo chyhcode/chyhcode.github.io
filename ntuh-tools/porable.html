@@ -1,0 +1,151 @@
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Portal 書籤小工具 - Portal bookmarklet</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+	<style>
+		html {
+			scroll-behavior: smooth;
+			overflow-y: scroll;
+		}
+		#templateOption {
+			display: flex; 
+			flex-wrap: wrap; 
+			height: 400px;"
+		}
+		pre {
+			white-space: pre;
+		}
+		textarea {
+			overflow-x: scroll; 
+			white-space: pre;
+		}
+	</style>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+	<!-- 
+	<script src="https://cdn.jsdelivr.net/gh/chyhcode/chyhcode.github.io/ntuh-tools/bookmarklet/bookmarklets.js"></script>
+	-->
+	<script src="bookmarklets.js"></script>
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-md sticky-top navbar-dark bg-dark">
+		<div class="container-lg">
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="navbar-expand">
+				<a class="navbar-brand" href="#"><strong>Portal 書籤小工具</strong></a>
+			</div>
+			<div class="collapse navbar-collapse" id="collapsibleNavbar">
+				<div class="navbar-nav nav">
+					<a class="nav-item nav-link" href="#pageIntroduction" id="pageIntroduction-tab" data-toggle="tab" role="tab">簡介</a>
+					<a class="nav-item nav-link" href="#pageOpenLinkBmkl" id="pageOpenLinkBmkl-tab" data-toggle="tab" role="tab">跳轉書籤小工具</a>
+					<a class="nav-item nav-link active" href="#pageSpecialBmkl" id="pageSpecialBmkl-tab" data-toggle="tab" role="tab">特殊書籤小工具</a>
+					<a class="nav-item nav-link" href="#pageCustomize" id="pageCustomize-tab" data-toggle="tab" role="tab">自定義書籤小工具</a>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<div class="container-lg">
+		<div class="alert alert-warning text-center" role="alert">
+			建議在書籤列新增一個"portal小工具"資料夾，避免被當雜物刪掉。<br>
+			也建議在資料夾內放上本站縮網址讓更多人可以用到 <a href="https://chyhcode.github.io/b">https://chyhcode.github.io/b</a><br>
+			有任何建議歡迎 Email 給我: chyhcode@gmail.com
+		</div>
+		<div class="tab-content">
+			<div class="tab-pane fade" id="pageIntroduction" role="tabpanel">
+				<h1 class="pt-4 text-center">簡介</h1>
+				<p>還沒完成啦</p>
+				<p>請參考 <a target="_blank" href="https://blog.pulipuli.info/2018/12/jquery-load-jquery-from-bookmark.html#postcatajquery-load-jquery-from-bookmark.html0_anchor1">布丁布丁吃什麼？-書籤小工具產生器</a> </p>
+			</div>
+			<div class="tab-pane fade" id="pageOpenLinkBmkl" role="tabpanel">
+				<h1 class="pt-4 text-center">跳轉書籤小工具</h1>
+				<ul id="listOpenLinkBmkl">
+					<li><a href="javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/Ward/ConfirmDiagnosisOrder.aspx' + location.search, 'ConfirmDiagnosisOrder'); undefined;">主</a></li>
+					<li><a href="javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/PatientBasicInfoEdit/SimpleInfoShowUsingPlaceHolder.aspx' + location.search.replace(/&amp;Func=[A-Za-z]+/, '') + '&amp;Func=PatientBriefMedicalRecord', 'PatientBriefMedicalRecord'); undefined;">醫療簡歷</a></li>
+					<li><a href="javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/PatientBasicInfoEdit/PatientMedicalRecordListQuery.aspx' + location.search, 'PatientMedicalRecordListQuery'); undefined;">史</a></li>
+					<li><a href="javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/MedicationHistory/Default.aspx' + location.search, 'MedicationHistory'); undefined;">藥史</a></li>
+					<li><a href="javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/PatientBasicInfoEdit/SimpleInfoShowUsingPlaceHolder.aspx' + location.search.replace(/&amp;Func=[A-Za-z]+/, '') + '&amp;Func=AdmissionNote', 'AdmissionNote'); undefined;">入摘紀錄</a> (未完成)</li>
+					<li><a href="javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/PatientBasicInfoEdit/SimpleInfoShowUsingPlaceHolder.aspx' + location.search.replace(/&amp;Func=[A-Za-z]+/, '') + '&amp;Func=DischargeSummaryByPersonID', 'DischargeSummaryByPersonID'); undefined;">出摘紀錄</a></li>
+					<li><a href="javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/PatientBasicInfoEdit/SimpleInfoShowUsingPlaceHolder.aspx' + location.search.replace(/&amp;Func=[A-Za-z]+/, '') + '&amp;Func=OPNoteList', 'OPNoteList'); undefined;">手術紀錄</a></li>
+					<li><a href="javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/Nursing/MainMenu_V2.aspx' + location.search, 'MainMenu_V2'); undefined;">護理作業</a></li>
+					<li><a href="javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/Nursing/VitalSign_TPR.aspx' + location.search, 'VitalSign_TPR'); undefined;">生</a></li>
+					<li><a href="javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/Ward/DrugGivenNote.aspx' + location.search, 'DrugGivenNote'); undefined;">給藥紀錄</a></li>
+					<li><a href="javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/Nursing/CatheterCare.aspx' + location.search, 'CatheterCare'); undefined;">管路</a></li>
+					<li><a href="javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/Nursing/Estimate_IO_Summery.aspx' + location.search, 'Estimate_IO_Summery'); undefined;">IO</a></li>
+					<li><a href="javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/Nursing/WorkList_ListCheck_V2.aspx' + location.search, 'WorkList_ListCheck_V2'); undefined;">治療及處置紀錄</a></li>
+					<li><a href="javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/Nursing/WorkList_OrderCheck.aspx' + location.search, 'WorkList_OrderCheck'); undefined;">醫囑簽收</a></li>
+					<li><a href="javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/Nursing/NursingProgressNote.aspx' + location.search, 'NursingProgressNote'); undefined;">護程</a></li>
+					<li><a href="javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/Ward/OffDutyNurV2.aspx' + location.search, 'OffDutyNurV2'); undefined;">護交</a></li>
+					<li><a href="javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/Nursing/Problem_PlanNote.aspx' + location.search, 'Problem_PlanNote'); undefined;">護理問題與措施紀錄</a></li>
+					<li><a href="javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/Ward/OrderDisplay.aspx' + location.search, 'OrderDisplay'); undefined;">囑</a></li>
+					<li><a href="javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/PatientOrderScheduling/OrderScheduling.aspx' + location.search, 'OrderScheduling'); undefined;">檢排</a></li>
+					<li><a href="javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/ConsentFormWeb/CreateConsentForm.aspx' + location.search, 'CreateConsentForm'); undefined;">同意書</a></li>
+					<li><a href="javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/Chemotherapy/MainPage.aspx' + location.search, 'ChemotherapyMainPage'); undefined;">黃單</a></li>
+					<li><a href="javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/OPManagement/OrderOpSchedule.aspx' + location.search, 'OrderOpSchedule'); undefined;">術排</a></li>
+					<li><a href="javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/ElectronicMedicalReportViewer/MedicalReportContent.aspx' + location.search, 'MedicalReportContent'); undefined;">報</a></li>
+					<li><a href="javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/PatientBasicInfoEdit/PACSImageShowList2.aspx' + location.search, 'PACSImageShowList2'); undefined;">PACS</a></li>
+					<li><a href="javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/ElectronicMedicalReportViewer/ExternalPage/DWHistoricalLabReport.aspx' + location.search + '&amp;hfdPersonid=' + (location.search.match(/PersonID=([a-zA-Z][0-9]{9})/)[1] || ''), 'DWHistoricalLabReport'); undefined;">歷史報告</a></li>
+					<li><a href="javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/PatientBasicInfoEdit/SimpleInfoShowUsingPlaceHolder.aspx' + location.search.replace(/&amp;Func=[A-Za-z]+/, '') + '&amp;Func=RISReport', 'RISReport'); undefined;">影醫報告</a></li>
+					<li><a href="javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/PatientBasicInfoEdit/SimpleInfoShowUsingPlaceHolder.aspx' + location.search.replace(/&amp;Func=[A-Za-z]+/, '') + '&amp;Func=SonoPERReport', 'SonoPERReport'); undefined;">超音波報告</a></li>
+					<li><a href="javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/Ward/InsertProgressNoteContent.aspx' + location.search, 'InsertProgressNoteContent'); undefined;">程</a></li>
+					<li><a href="javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/PatientBasicInfoEdit/SimpleInfoShowUsingPlaceHolder.aspx' + location.search.replace(/&amp;Func=[A-Za-z]+/, '') + '&amp;Func=ProgressNote', 'ProgressNote'); undefined;">程s</a></li>
+					<li><a href="javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/Ward/DoctorEnterOrder.aspx' + location.search, 'DoctorEnterOrder'); undefined;">診</a></li>
+					<li><a href="javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/Ward/MedicationV2.aspx' + location.search, 'MedicationV2'); undefined;">處</a></li>
+					<li><a href="javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/Ward/DoctorDietMain.aspx' + location.search, 'DoctorDietMain'); undefined;">食</a></li>
+					<li><a href="javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/Ward/NotifyOtherDoctor.aspx' + location.search, 'NotifyOtherDoctor'); undefined;">照</a></li>
+					<li><a href="javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/BloodStock/Pages/His/CreateOrder.aspx' + location.search, 'BloodStockCreateOrder'); undefined;">血</a></li>
+					<li><a href="javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/PatientBasicInfoEdit/SimpleShowiframePage.aspx' + location.search, 'SimpleShowiframePage'); undefined;">EMR</a></li>
+					<li><a href="javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/Ward/InsertAdmissionNoteContent.aspx' + location.search, 'InsertAdmissionNoteContent'); undefined;">入</a></li>
+					<li><a href="javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/Ward/EnterTakeCarePersonInfo.aspx' + location.search, 'EnterTakeCarePersonInfo'); undefined;">績效</a></li>
+					<li><a href="javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/Ward/ConfirmDiagnosisOrder.aspx' + location.search, 'ConfirmDiagnosisOrder'); undefined;">身分</a></li>
+					<li><a href="javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/Ward/DoctorPrePareDischargeV2.aspx' + location.search, 'DoctorPrePareDischargeV2'); undefined;">準</a></li>
+					<li><a href="javascript: open('http://hisaw.ntuh.gov.tw/WebApplication/Clinics/DiagCertificate_New.aspx' + location.search, 'DiagCertificate_New'); undefined;">證</a></li>
+					<li><a href="javascript: open('http://hisaw.ntuh.gov.tw/WebApplication/Clinics/ClinicRoomAdministration.aspx' + location.search + '?I' + accountidse[0], 'ClinicRoomAdministration'); undefined;">約</a> (未完成)</li>
+					<li><a href="javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/InPatient/Ward/InsertDisChargeNoteContent.aspx' + location.search, 'InsertDisChargeNoteContent'); undefined;">出</a></li>
+					<li><a href="javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/OtherIndependentProj/PatientBasicInfoEdit/SimpleInfoShowUsingPlaceHolder.aspx' + location.search.replace(/&amp;Func=[A-Za-z]+/, '') + '&amp;Func=FutureSchedule', 'FutureSchedule'); undefined;">未來</a></li>
+					<li><a href="javascript: open('http://ehisaw.ntuh.gov.tw/WebApplication/Emergency/EmergencyConfirmDiagnosisOrder.aspx', 'EmergencyConfirmDiagnosisOrder'); undefined;">急診</a></li>
+					<li><a href="javascript: open('http://ihisaw.ntuh.gov.tw/WebApplication/EBoard/EBoardMainPage.aspx' + location.search, 'EBoardMainPage'); undefined;">電子白板</a></li>
+				</ul>
+			</div>
+			<div class="tab-pane fade show active" id="pageSpecialBmkl" role="tabpanel">
+				<h1 class="pt-4 text-center">特殊書籤小工具</h1>
+				<!-- 
+				<div class="card card-body mt-3">
+					<div>
+						<a class="btn btn-success" href="ele.funcStr">ele.title</a>
+						<a class="btn btn-secondary ml-1" data-toggle="collapse" href="#codeEleName">顯示程式碼</a>
+					</div>
+					<p class="mt-3">ele.description</p>
+					<div class="collapse" id="codeEleName">
+						<pre class="alert alert-success">ele.func</pre>
+					</div>
+				</div>
+				-->
+				<div class="card card-body mt-3">
+					<div><a class="btn btn-success" href="javascript: if(location.pathname!='/WebApplication/Clinics/DiagCertificate_New.aspx')open('http://hisaw.ntuh.gov.tw/WebApplication/Clinics/DiagCertificate_New.aspx'+location.search,'DiagCertificate_New');else if(document.getElementById('NTUHWeb1_InstructionSetItem')){if(window.NodeList&amp;&amp;!NodeList.prototype.forEach){NodeList.prototype.forEach=Array.prototype.forEach;}function qFor(s,f){document.querySelectorAll(s).forEach(f);}function nn(n){return n<10?'0'+n:''+n;}function dateStr(d,addTime){d=new Date(d);return'於民國'+(d.getFullYear()-1911)+'年'+nn(d.getMonth()+1)+'月'+nn(d.getDate())+'日'+(addTime?nn(d.getHours())+'時'+nn(d.getMinutes())+'分':'');}function createLink(wrap,t){var a=document.createElement('a');a.innerText=t;a.style='font-weight: bold; font-size: 16px;';a.href='javascript: document.getElementById(&quot;NTUHWeb1_InstructionSetItem&quot;).value += &quot;'+t+'&quot;; undefined;';wrap.innerText='';wrap.bmklet=true;return wrap.appendChild(a);}var WDtxt=['至本院一般病房住院，','轉至一般病房住院，','轉至加護病房，','轉至一般病房，'],ref=document.querySelector('#NTUHWeb1_gvwStatusHistory tr:nth-child(2) > td:nth-child(4)');ref&amp;&amp;!ref.bmklet&amp;&amp;createLink(ref,dateStr(ref.innerText,true)+'至本院急診就診並留觀待床，');qFor('#NTUHWeb1_dgLogPatTransferBed [class^=&quot;tableText&quot;] td:nth-child(3)',function(td){!td.bmklet&amp;&amp;createLink(td,dateStr(td.innerText));});ref=new Date();qFor('#NTUHWeb1_dgOpScheduleData tr[class^=&quot;tableText&quot;] td:nth-child(1)',function(td){!td.bmklet&amp;&amp;createLink(td,dateStr(td.innerText.length==5?(ref.getFullYear()+'/'+td.innerText):td.innerText)+'接受[術式]，');});qFor('[id$=&quot;lblChartNo&quot;]',function(a){a.innerText='展開檢傷時間';a.style='font-weight: bold; font-size: 16px;';});ref.setDate(ref.getDate()+1);WDtxt.push(dateStr(ref)+'出院，出院後宜持續門診追蹤治療。');WDtxt.forEach(function(t){document.getElementById('NTUHWeb1_dgLogPatTransferBed').parentNode.appendChild(createLink(document.createElement('div'),t).parentNode);});document.getElementById('NTUHWeb1_InstructionSetItem').value='病患因上述疾病，';alert('診斷書小工具已開啟!');}else alert('此畫面非診斷書開立畫面!');">診斷證明書小工具</a><a class="btn btn-secondary ml-1" href="#codeDiagCertificate" data-toggle="collapse">顯示程式碼</a></div>
+					<p class="mt-3">在診斷書開立頁面使用，將急診、住院、手術日期變成民國年，附帶常用語句"病患因上述疾病"、"至本院急診就診並留觀待床"、"轉至一般病房住院"...等等片語，以及並且支援點擊帶入文字。須注意，急診就診時間須點開"病人急診歷史動向"中的"病歷號"展開幾分幾秒。若小工具因為portal刷新被洗掉，例如使用系統內建片語、展開急診動向等，再重新使用小工具即可。若在其他頁面使用，將自動跳轉至診斷書頁面。</p>
+					<div class="collapse" id="codeDiagCertificate">
+						<pre class="alert alert-success">if (location.pathname != '/WebApplication/Clinics/DiagCertificate_New.aspx')<br>  open('http://hisaw.ntuh.gov.tw/WebApplication/Clinics/DiagCertificate_New.aspx' + location.search, 'DiagCertificate_New');<br>else if (document.getElementById('NTUHWeb1_InstructionSetItem')) {<br>  if (window.NodeList &amp;&amp; !NodeList.prototype.forEach) {<br>    NodeList.prototype.forEach = Array.prototype.forEach;<br>  }<br><br>  function qFor(s, f) {<br>    document.querySelectorAll(s).forEach(f);<br>  }<br><br>  function nn(n) {<br>    return n &lt; 10 ? '0' + n : '' + n;<br>  }<br><br>  function dateStr(d, addTime) {<br>    d = new Date(d);<br>    return '於民國' + (d.getFullYear() - 1911) + '年' + nn(d.getMonth() + 1) + '月' + nn(d.getDate()) + '日' + (addTime ? nn(d.getHours()) + '時' + nn(d.getMinutes()) + '分' : '');<br>  }<br><br>  function createLink(wrap, t) {<br>    var a = document.createElement('a');<br>    a.innerText = t;<br>    a.style = 'font-weight: bold; font-size: 16px;';<br>    a.href = 'javascript: document.getElementById(\"NTUHWeb1_InstructionSetItem\").value += \"' + t + '\"; undefined;';<br>    wrap.innerText = '';<br>    wrap.bmklet = true;<br>    return wrap.appendChild(a);<br>  }<br><br>  var WDtxt = ['至本院一般病房住院，', '轉至一般病房住院，', '轉至加護病房，', '轉至一般病房，'],<br>    ref = document.querySelector('#NTUHWeb1_gvwStatusHistory tr:nth-child(2) &gt; td:nth-child(4)');<br>  ref &amp;&amp; !ref.bmklet &amp;&amp; createLink(ref, dateStr(ref.innerText, true) + '至本院急診就診並留觀待床，');<br><br>  qFor('#NTUHWeb1_dgLogPatTransferBed [class^=\"tableText\"] td:nth-child(3)', function(td) {<br>    !td.bmklet &amp;&amp; createLink(td, dateStr(td.innerText));<br>  });<br><br>  ref = new Date();<br>  qFor('#NTUHWeb1_dgOpScheduleData tr[class^=\"tableText\"] td:nth-child(1)', function(td) {<br>    !td.bmklet &amp;&amp; createLink(td, dateStr(td.innerText.length == 5 ? (ref.getFullYear() + '/' + td.innerText) : td.innerText) + '接受[術式]，');<br>  });<br><br>  qFor('[id$=\"lblChartNo\"]', function(a) {<br>    a.innerText = '展開檢傷時間';<br>    a.style = 'font-weight: bold; font-size: 16px;';<br>  });<br><br>  ref.setDate(ref.getDate() + 1);<br>  WDtxt.push(dateStr(ref) + '出院，出院後宜持續門診追蹤治療。');<br>  WDtxt.forEach(function(t) {<br>    document.getElementById('NTUHWeb1_dgLogPatTransferBed').parentNode.appendChild(createLink(document.createElement('div'), t).parentNode);<br>  });<br><br>  document.getElementById('NTUHWeb1_InstructionSetItem').value = '病患因上述疾病，';<br>  alert('診斷書小工具已開啟!');<br>}<br>else alert('此畫面非診斷書開立畫面!');<br></pre>
+					</div>
+				</div>
+				<div class="card card-body mt-3">
+					<div><a class="btn btn-success" href="javascript: var d,fs,t,i,j,k;d=document.getElementById('Reportifrm');if(d){d.style.height='90vh';d=d.contentDocument;}else d=document;fs=d.querySelectorAll('fieldset.GroupHead');for(k=0;k<fs.length;k++){t=fs[k].querySelectorAll('table.GreenSheet');for(var i=1;i<t.length;i++){for(var j=0;j<t[i].rows.length;j++){if(j!=1)t[i].rows[j].removeChild(t[i].rows[j].firstElementChild);t[0].rows[j].innerHTML+=t[i].rows[j].innerHTML;}fs[k].removeChild(t[i]);}fs[k].appendChild(d.createElement('div')).appendChild(t[0]);}if(!d.getElementById('GreenSheetOverflow')){s=d.createElement('style');s.id='GreenSheetOverflow';s.innerText='.GroupHead{min-inline-size:unset}.GroupHead>div{overflow-x:auto}.GreenSheetTitle,.GreenSheet{table-layout:fixed;margin:0}.GreenSheet th{min-width:87px}.GreenSheet tbody tr>:first-child,.GreenSheet .LEFTTOP{min-width:150px;position:sticky;left:0}';d.body.appendChild(s);}d=d.getElementById('rReportTab_lsvReportBody_ctrl0_ctl00_ReportTitle1_contentTemplatePlaceholder');if(d)d.style.border='none';undefined;">綠單不換行小工具</a><a class="btn btn-secondary ml-1" href="#codeLongGreenSheet" data-toggle="collapse">顯示程式碼</a></div>
+					<p class="mt-3">在綠單使用，原本八格會換行的綠單，導致剛好跨行的資料不好看，此小工具會將綠單合併成一長串。</p>
+					<div class="collapse" id="codeLongGreenSheet">
+						<pre class="alert alert-success">var d, fs, t, i, j, k;<br>d = document.getElementById('Reportifrm');<br>if (d) {<br>  d.style.height = '90vh';<br>  d = d.contentDocument;<br>}<br>else d = document;<br><br>fs = d.querySelectorAll('fieldset.GroupHead');<br>for (k = 0; k &lt; fs.length; k++) {<br>  t = fs[k].querySelectorAll('table.GreenSheet');<br>  for (var i = 1; i &lt; t.length; i++) {<br>    for (var j = 0; j &lt; t[i].rows.length; j++) {<br>      if (j != 1) t[i].rows[j].removeChild(t[i].rows[j].firstElementChild);<br>      t[0].rows[j].innerHTML += t[i].rows[j].innerHTML;<br>    }<br>    fs[k].removeChild(t[i]);<br>  }<br>  fs[k].appendChild(d.createElement('div')).appendChild(t[0]);<br>}<br><br>if (!d.getElementById('GreenSheetOverflow')) {<br>  s = d.createElement('style');<br>  s.id = 'GreenSheetOverflow';<br>  s.innerText = '.GroupHead{min-inline-size:unset}.GroupHead&gt;div{overflow-x:auto}.GreenSheetTitle,.GreenSheet{table-layout:fixed;margin:0}.GreenSheet th{min-width:87px}.GreenSheet tbody tr&gt;:first-child,.GreenSheet .LEFTTOP{min-width:150px;position:sticky;left:0}';<br>  d.body.appendChild(s);<br>}<br><br>d = d.getElementById('rReportTab_lsvReportBody_ctrl0_ctl00_ReportTitle1_contentTemplatePlaceholder');<br>if (d) d.style.border = 'none';<br>undefined;<br></pre>
+					</div>
+				</div>
+			</div>
+			<div class="tab-pane fade" id="pageCustomize" role="tabpanel">
+				<h1 class="pt-4 text-center">自定義書籤小工具</h1>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
