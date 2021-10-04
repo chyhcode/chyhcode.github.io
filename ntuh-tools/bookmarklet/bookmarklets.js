@@ -464,6 +464,45 @@ var bookmarklet = {
 			undefined;
 		},
 		funcStr: "javascript: var d,fs,t,i,j,k;d=document.getElementById('Reportifrm');if(d){d.style.height='90vh';d=d.contentDocument;}else d=document;fs=d.querySelectorAll('fieldset.GroupHead');for(k=0;k<fs.length;k++){t=fs[k].querySelectorAll('table.GreenSheet');for(var i=1;i<t.length;i++){for(var j=0;j<t[i].rows.length;j++){if(j!=1)t[i].rows[j].removeChild(t[i].rows[j].firstElementChild);t[0].rows[j].innerHTML+=t[i].rows[j].innerHTML;}fs[k].removeChild(t[i]);}fs[k].appendChild(d.createElement('div')).appendChild(t[0]);}if(!d.getElementById('GreenSheetOverflow')){s=d.createElement('style');s.id='GreenSheetOverflow';s.innerText='.GroupHead{min-inline-size:unset}.GroupHead>div{overflow-x:auto}.GreenSheetTitle,.GreenSheet{table-layout:fixed;margin:0}.GreenSheet th{min-width:87px}.GreenSheet tbody tr>:first-child,.GreenSheet .LEFTTOP{min-width:150px;position:sticky;left:0}';d.body.appendChild(s);}d=d.getElementById('rReportTab_lsvReportBody_ctrl0_ctl00_ReportTitle1_contentTemplatePlaceholder');if(d)d.style.border='none';undefined;",
+	}, {
+		name: 'CopyPAP',
+		title: 'PAP複製小工具',
+		description: '住院醫師在撰寫Weekly、On Service、Off Service，PAP得從Progress一個一個複製，反過來也一樣，使用此小工具可以幫助住院醫師減少文書作業時間。使用方式：點開要複製的note，點選此小工具，會在"新增progess"那一區生成一個按鈕，如"progress 2021-01-01"，點開要貼上的note，按相應的按鈕"progress 2021-01-01"，貼上PAP。注意：需先建立好同樣數目的PAP，避免錯誤',
+		func: function() {
+			var wrap = document.getElementById('btnWrap'),
+				btn, idPrefix;
+			if (!wrap) {
+				wrap = document.createElement('div');
+				wrap.id = 'btnWrap';
+				wrap.style.display = 'inline';
+				document.getElementById('NTUHWeb1_udpSystemLinkButton').parentNode.appendChild(wrap);
+			}
+			if (['progress', 'offservice', 'onservice', 'weekly', 'blank'].indexOf($SelectedNote.NoteType) != -1) {
+				console.log('create copy btn');
+				idPrefix = document.querySelector('input[value="' + $SelectedNote.NoteType + '"][name]').id.replace('_hidNoteType', '');
+
+				btn = document.createElement('input');
+				btn.className = btn.type = 'button';
+				btn.setAttribute('value', $SelectedNote.NoteType + ' ' + $SelectedNote.ExecutionDateTime.slice(0, 10));
+
+				btn.PAP = [];
+
+				document.querySelectorAll('#' + idPrefix + '_ucPAP_example textarea').forEach(function(ta) {
+					btn.PAP.push({
+						id: ta.id.replace(idPrefix, ''),
+						value: ta.value
+					});
+				});
+				btn.onclick = function() {
+					idPrefix = document.querySelector('input[value="' + $SelectedNote.NoteType + '"][name]').id.replace('_hidNoteType', '');
+					this.PAP.forEach(function(ta) {
+						document.getElementById(idPrefix + ta.id).value = ta.value;
+					});
+				};
+				wrap.appendChild(btn);
+			}
+		},
+		funcStr: "javascript: var wrap=document.getElementById('btnWrap'),btn,idPrefix;if(!wrap){wrap=document.createElement('div');wrap.id='btnWrap';wrap.style.display='inline';document.getElementById('NTUHWeb1_udpSystemLinkButton').parentNode.appendChild(wrap);}if(['progress','offservice','onservice','weekly','blank'].indexOf($SelectedNote.NoteType)!=-1){console.log('create copy btn');idPrefix=document.querySelector('input[value=\"'+$SelectedNote.NoteType+'\"][name]').id.replace('_hidNoteType','');btn=document.createElement('input');btn.className=btn.type='button';btn.setAttribute('value',$SelectedNote.NoteType+' '+$SelectedNote.ExecutionDateTime.slice(0,10));btn.PAP=[];document.querySelectorAll('#'+idPrefix+'_ucPAP_example textarea').forEach(function(ta){btn.PAP.push({id:ta.id.replace(idPrefix,''),value:ta.value});});btn.onclick=function(){idPrefix=document.querySelector('input[value=\"'+$SelectedNote.NoteType+'\"][name]').id.replace('_hidNoteType','');this.PAP.forEach(function(ta){document.getElementById(idPrefix+ta.id).value=ta.value;});};wrap.appendChild(btn);}",
 	}, ],
 };
 
