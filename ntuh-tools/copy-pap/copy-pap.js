@@ -1,7 +1,9 @@
 function foo() {
 	// javascript:
-	var wrap = document.getElementById('btnWrap'),
-		btn, idPrefix;
+	if (window.NodeList && !NodeList.prototype.forEach) {
+		NodeList.prototype.forEach = Array.prototype.forEach;
+	}
+	var btn, idPrefix, wrap = document.getElementById('btnWrap');
 
 	if (!wrap) {
 		wrap = document.createElement('div');
@@ -17,7 +19,7 @@ function foo() {
 		btn = document.createElement('input');
 		btn.className = btn.type = 'button';
 		btn.setAttribute('value', $SelectedNote.NoteType + ' ' + $SelectedNote.ExecutionDateTime.slice(0, 10));
-		
+
 		btn.PAP = [];
 		document.querySelectorAll('#' + idPrefix + '_ucPAP_example textarea').forEach(function(ta) {
 			btn.PAP.push({
