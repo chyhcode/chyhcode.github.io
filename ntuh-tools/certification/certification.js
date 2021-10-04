@@ -59,10 +59,10 @@ else if (document.getElementById('NTUHWeb1_InstructionSetItem')) {
 }
 else alert('此畫面非診斷書開立畫面!');
 
-// ER 2021/08/28 21:05
-// WD 2021.08.29 02:05:21
-// OP 2021/08/29
-// OP 08/29
+// ER 2021/01/01 11:22
+// WD 2021.01.01 11:22:33
+// OP 2021/01/01
+// OP 01/01
 
 
 // 病患因上述疾病，
