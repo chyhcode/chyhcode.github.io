@@ -469,8 +469,10 @@ var bookmarklet = {
 		title: 'PAP複製小工具',
 		description: '住院醫師在撰寫Weekly、On Service、Off Service，PAP得從Progress一個一個複製，反過來也一樣，使用此小工具可以幫助住院醫師減少文書作業時間。使用方式：點開要複製的note，點選此小工具，會在"新增progess"那一區生成一個按鈕，如"progress 2021-01-01"，點開要貼上的note，按相應的按鈕"progress 2021-01-01"，貼上PAP。注意：需先建立好同樣數目的PAP，避免錯誤',
 		func: function() {
-			var wrap = document.getElementById('btnWrap'),
-				btn, idPrefix;
+			var btn, idPrefix, wrap = document.getElementById('btnWrap');
+			if (window.NodeList && !NodeList.prototype.forEach) {
+				NodeList.prototype.forEach = Array.prototype.forEach;
+			}
 			if (!wrap) {
 				wrap = document.createElement('div');
 				wrap.id = 'btnWrap';
@@ -480,19 +482,18 @@ var bookmarklet = {
 			if (['progress', 'offservice', 'onservice', 'weekly', 'blank'].indexOf($SelectedNote.NoteType) != -1) {
 				console.log('create copy btn');
 				idPrefix = document.querySelector('input[value="' + $SelectedNote.NoteType + '"][name]').id.replace('_hidNoteType', '');
-
 				btn = document.createElement('input');
 				btn.className = btn.type = 'button';
 				btn.setAttribute('value', $SelectedNote.NoteType + ' ' + $SelectedNote.ExecutionDateTime.slice(0, 10));
-
+				
 				btn.PAP = [];
-
 				document.querySelectorAll('#' + idPrefix + '_ucPAP_example textarea').forEach(function(ta) {
 					btn.PAP.push({
 						id: ta.id.replace(idPrefix, ''),
 						value: ta.value
 					});
 				});
+				
 				btn.onclick = function() {
 					idPrefix = document.querySelector('input[value="' + $SelectedNote.NoteType + '"][name]').id.replace('_hidNoteType', '');
 					this.PAP.forEach(function(ta) {
@@ -502,7 +503,7 @@ var bookmarklet = {
 				wrap.appendChild(btn);
 			}
 		},
-		funcStr: "javascript: var wrap=document.getElementById('btnWrap'),btn,idPrefix;if(!wrap){wrap=document.createElement('div');wrap.id='btnWrap';wrap.style.display='inline';document.getElementById('NTUHWeb1_udpSystemLinkButton').parentNode.appendChild(wrap);}if(['progress','offservice','onservice','weekly','blank'].indexOf($SelectedNote.NoteType)!=-1){console.log('create copy btn');idPrefix=document.querySelector('input[value=\"'+$SelectedNote.NoteType+'\"][name]').id.replace('_hidNoteType','');btn=document.createElement('input');btn.className=btn.type='button';btn.setAttribute('value',$SelectedNote.NoteType+' '+$SelectedNote.ExecutionDateTime.slice(0,10));btn.PAP=[];document.querySelectorAll('#'+idPrefix+'_ucPAP_example textarea').forEach(function(ta){btn.PAP.push({id:ta.id.replace(idPrefix,''),value:ta.value});});btn.onclick=function(){idPrefix=document.querySelector('input[value=\"'+$SelectedNote.NoteType+'\"][name]').id.replace('_hidNoteType','');this.PAP.forEach(function(ta){document.getElementById(idPrefix+ta.id).value=ta.value;});};wrap.appendChild(btn);}",
+		funcStr: "javascript: if(window.NodeList&&!NodeList.prototype.forEach){NodeList.prototype.forEach=Array.prototype.forEach;}var wrap=document.getElementById('btnWrap'),btn,idPrefix;if(!wrap){wrap=document.createElement('div');wrap.id='btnWrap';wrap.style.display='inline';document.getElementById('NTUHWeb1_udpSystemLinkButton').parentNode.appendChild(wrap);}if(['progress','offservice','onservice','weekly','blank'].indexOf($SelectedNote.NoteType)!=-1){console.log('create copy btn');idPrefix=document.querySelector('input[value=\"'+$SelectedNote.NoteType+'\"][name]').id.replace('_hidNoteType','');btn=document.createElement('input');btn.className=btn.type='button';btn.setAttribute('value',$SelectedNote.NoteType+' '+$SelectedNote.ExecutionDateTime.slice(0,10));btn.PAP=[];document.querySelectorAll('#'+idPrefix+'_ucPAP_example textarea').forEach(function(ta){btn.PAP.push({id:ta.id.replace(idPrefix,''),value:ta.value});});btn.onclick=function(){idPrefix=document.querySelector('input[value=\"'+$SelectedNote.NoteType+'\"][name]').id.replace('_hidNoteType','');this.PAP.forEach(function(ta){document.getElementById(idPrefix+ta.id).value=ta.value;});};wrap.appendChild(btn);}",
 	}, ],
 };
 
