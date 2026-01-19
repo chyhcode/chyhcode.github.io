@@ -1,1 +1,3 @@
-remote_theme: pages-themes/primer@v0.2.0
+theme: jekyll-theme-primer
+title: 我的網站名稱
+description: 這裡寫你的網站描述
